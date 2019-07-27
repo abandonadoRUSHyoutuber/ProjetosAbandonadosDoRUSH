@@ -1,0 +1,33 @@
+Console-Nao-Pode: "&cO console nao pode usar este comando."
+Ainda-Nao-Definido: "&cA localização para %nome% ainda não foi definida."
+Teleporte-Concluido: "&aTeleportado com sucesso para %nome%."
+Posicao-Definida: "&aLocalização %pos% definida com sucesso!"
+Posicao-Deletada: "&eLocalização %pos% deletada com sucesso!"
+# Permissão para usar os comandos de admin: warp.admin
+# Exemplo, /arena set p1
+# Exemplo, /cidade del p4
+Admin-Comando-Incorreto: |
+  &cComando Incorreto, use: 
+  &c/%comando% set <pos> &8-&7 Define uma posição.
+  &c/%comando% del <pos> &8-&7 Deleta uma posição.
+
+# Caso não queira colocar permissão no comando basta deixar em branco
+Comandos:
+  arena:
+    Nome: "Arena PvP"
+    Comando: "/arena"
+    Descricao: "Teleporta ate a arena."
+    Permissao: "warp.arena"
+    SemPermissao: "&cVocê não tem permissão para se teleportar para a arena."
+  cidade: 
+    Nome: "Cidade"
+    Comando: "/cidade"
+    Descricao: "Teleporta ate a cidade central."
+    Permissao: "warp.cidade.vip"
+    SemPermissao: "&cVocê não tem permissão para ir para a cidade."
+  teste: 
+    Nome: "Comando Teste"
+    Comando: "/teste"
+    Descricao: "Comando teste, não precisa de permissão."
+    Permissao: ""
+    SemPermissao: ""
