@@ -1,0 +1,6 @@
+name: Imortal
+main: leandro.salustriano.bydefault.Imortal
+version: 1.0
+commands:
+   imortal-op:
+   imortal:

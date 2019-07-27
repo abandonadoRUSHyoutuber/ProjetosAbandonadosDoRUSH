@@ -1,0 +1,50 @@
+##LIGAR/DESLIGAR O EVENTO FALSE PARA DESATIVAR TRUE PARA ATIVAR
+active: true
+
+##INTERVALO ANTES DOS JOGADORES COMECAR A BATALHAR EM SEGUNDOS
+Seconds_to_join: '3'
+
+##INTERVALO ANTES DE ENTRAR/SAIR DO EVENTO
+Seconds_to_wait: '3'
+
+##SEGUNDOS PARA A BATALHA INICIAR (PREVENCAO A FREE KILL)
+Seconds_to_start_duel: '20'
+
+##INTERVALO EM SEGUNDOS PARA O PLAYER PERDEDOR VOLTAR A ENTRAR NO EVENTO (EVITANDO FREE KILL)
+Seconds_to_return: '10'
+##COMANDOS QUE SERAO BLOQUEADOS QUANDO OS JOGADORES ESTIVEREM BATALHANDO
+commands_block:
+    - '/home'
+    - '/tell'
+    - '/tpa'
+    - '/tp'
+    - '/sethome'
+    - '/warp'
+
+##COMANDOS QUE SERAO BLOQUEADOS QUANDO O JOGADOR ESTIVER NA FILA DE ESPERA    
+commands_block_espera:
+    - '/home'
+    - '/tell'
+    - '/tpa'
+    - '/tp'
+    - '/sethome'
+    - '/warp'
+    - '/setwarp'
+
+##COMANDOS QUE SERAO BLOQUEADOS NA SALA DO CAMAROTE
+commands_block_camarote:
+    - '/sethome'
+    - '/warp'
+    - '/setwarp'
+
+##A QUANTIDADE DE KILLS FREQUENTES PARA DAR AUTO BAN NO EVENTO
+Auto_ban_qtd_kill_seguidos: 5
+
+##TAG NO CHAT
+winner_tag_chat: '&5[Imortal]&f '
+
+##PARTICIPANTES NA BATALHA DO EVENTO PODERAM USAR O CHAT ? USE TRUE PARA SIM E FALSE PARA NAO
+player_in_event_interact_chat: false
+
+##JOGADOR IMORTAL ATUAL
+player: ''

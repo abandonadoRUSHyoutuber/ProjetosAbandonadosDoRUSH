@@ -1,0 +1,2 @@
+command_top_execute: '&6{position}.&2 {player} venceu &6{vitorias} &2 batalhas consecultivas'
+player_vs_player: '&9{player1} &cVs. &9{player2}'
