@@ -1,0 +1,6 @@
+Protecao-Com-Spawner-Perto: "&cHey! Você não pode colocar este bloco de proteção aqui pois ele esta muito perto de um Gerador de Monstros!"
+Spawner-Com-Protecao-Perto: "&cHey! Você não pode colocar este Gerador de Monstros aqui pois ele esta muito perto de outros blocos de proteção!"
+Distancia-Minima-Do-Spawner: 3
+Blocos-De-Protecao:
+- 7
+- 49
