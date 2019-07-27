@@ -1,0 +1,38 @@
+file-version: 1
+
+# Lista dos nomes dos encantamentos da 1.8
+# http://docs.codelanx.com/Bukkit/1.8/org/bukkit/enchantments/Enchantment.html
+
+# Lista dos encantamentos bloqueados na bigorna
+# "Encantamento:Nivel" - Caso queira bloquear todos os niveis coloque *
+Encantamentos-Bloqueados-Bigorna:
+  - "DURABILITY:1"
+  - "DURABILITY:2"
+  - "LUCK:*"
+  - "DAMAGE_ALL:4"
+  - "DAMAGE_ALL:5"
+  - "FIRE_ASPECT:*"
+
+# Lista dos encantamentos bloqueados na mesa de encantamentos
+# "Encantamento:Nivel" - Caso queira bloquear todos os niveis coloque *
+Encantamentos-Bloqueados-Mesa:
+  - "PROTECTION_ENVIRONMENTAL:*"
+  - "ARROW_DAMAGE:5"
+  - "ARROW_DAMAGE:4"
+  - "ARROW_DAMAGE:3"
+
+# Os encantamentos bloqueados, devem ser bloqueados em todos os materiais?
+# Se você colocar 'false' os encantamentos só serão bloqueados nos itens da lista
+# Se você colocar 'true' os encantamentos serão bloqueados em todos os itens
+Bloquear-Encantamentos-Em-Todos-Materiais: true
+Lista-De-Materiais-Com-Encantamentos-Bloqueados:
+  - "DIAMOND_SWORD"
+
+# Mensagem quando o player tenta reparar um item com encantamento bloqueado
+Encantamento-Bloqueado-Reparacao: "&cEste item não pode ser reparado pois ele possui o encantamento '{e} {l}' que esta bloqueado."
+
+# Mensagem quando o player tenta juntar dois itens com encantamento bloqueado
+Encantamento-Bloqueado-Juncao: "&cEstes itens não podem ser juntados pois algum deles possui o encantamento '{e} {l}' que esta bloqueado."
+
+# Variavel {e} retorna o nome do encantamento
+# Variavel {l} retorna o level do encantamento

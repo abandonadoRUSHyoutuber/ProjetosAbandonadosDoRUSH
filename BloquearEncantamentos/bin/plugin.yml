@@ -1,0 +1,4 @@
+main: rush.bloquearencantamentos.Main
+version: 1.0
+name: BloquearEncantamentos
+author: RUSH
