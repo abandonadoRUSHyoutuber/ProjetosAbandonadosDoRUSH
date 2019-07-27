@@ -1,0 +1,8 @@
+Comando-Incorreto: "&cComando incorreto, use /givemulti <player>"
+Player-Offline: "&cEste player não esta online no momento ou não existe."
+Ferramenta-Enviada: "&aFerramenta enviada com sucesso para &e{player}&a!"
+
+Item-Nome: "&cTesoura Multi Ferramenta"
+Durabilidade-Inicial: 5000
+
+Dropar-Itens: true
