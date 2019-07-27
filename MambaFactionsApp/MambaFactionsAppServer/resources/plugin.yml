@@ -1,0 +1,3 @@
+main: rush.mamba.app.server.MambaApp
+version: 1.0
+name: MambaApp
