@@ -1,0 +1,4 @@
+name: LimitadorDeBlocos
+version: 1.0
+main: rush.limitadordeblocos.Main
+author: RUSH

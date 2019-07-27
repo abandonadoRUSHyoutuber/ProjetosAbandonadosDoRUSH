@@ -1,0 +1,25 @@
+file-version: 1
+
+##
+# Permissão que consede o limite vip: limitador.vip
+
+##
+# Database do plugin
+# Se o MySQL estiver false sera usado SQLite
+MySQL:
+  Ativar: false
+  User: 'root'
+  Password: '123'
+  Host: 'localhost'
+  Database: 'PlayerBlocos'
+
+##
+# Mensagen do plugin
+Limite-Atingido: "&cVocê só pode colocar este bloco no chão {quantia} vezes."
+   
+##
+# Blocos com limitações
+# "ID:DATA:LIMITE:LIMITEVIP"
+Blocos-Limitados:
+  - "1:0:10:20"
+  - "12:1:5:10"
