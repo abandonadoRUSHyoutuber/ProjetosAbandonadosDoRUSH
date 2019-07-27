@@ -1,0 +1,3 @@
+main: rush.editfarm.Main
+version: 1.0
+name: EditFarm
