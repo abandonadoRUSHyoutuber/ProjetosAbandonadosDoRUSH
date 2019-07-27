@@ -1,0 +1,4 @@
+name: StackMobs
+version: 1.0
+main: rush.stackmobs.Main
+author: RUSH
