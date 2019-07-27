@@ -1,0 +1,18 @@
+file-version: 1
+
+##
+# Lista de mundos onde as kills serão contadas na lore
+###
+Mundos-Habilitados:
+- world
+- world_nether
+- guerra
+- spawn
+
+##
+# Lista de itens que contarão as kills na lore
+###
+Ids-Habilitados:
+- 267
+- 261
+- 276
