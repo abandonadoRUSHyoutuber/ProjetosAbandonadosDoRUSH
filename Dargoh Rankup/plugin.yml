@@ -1,0 +1,9 @@
+name: DRankUp
+author: [Wanderson, Derson]
+version: 1.0
+main: me.wanderson.DRankUp
+depend: [Vault, PermissionsEx]
+commands:
+  rankup:
+  ranks:
+  deposito:

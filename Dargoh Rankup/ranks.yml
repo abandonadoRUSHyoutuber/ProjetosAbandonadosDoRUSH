@@ -1,0 +1,41 @@
+# Lista com todos os ranks
+ranks:
+  # Aqui vc coloca o mesmo nome do groupo do permissionEx
+  zombie1:
+    name: '&aZombie I'
+    prefix: '&f[&aZombieI&f]'
+    custo: 5000
+    padrao: true
+    proximo: 'zombie2'
+    item_id: 367
+    item_data: 0
+    item_slot: 11
+    item_lore:
+      - '&7Nesse Rank voce tem direito a:'
+      - '&7Mina Zombie, Kit zombie'
+    #commands:
+      #- 'aqui vai seu comando sem a /'
+
+  zombie2:
+    name: '&aZombie II'
+    prefix: '&f[&aZombieII&f]'
+    custo: 10000
+    proximo: 'zombie3'
+    item_id: 367
+    item_data: 0
+    item_slot: 20
+    item_lore:
+      - '&7Nesse Rank voce tem direito a:'
+      - '&7Mina Zombie, Kit zombie'
+
+  zombie3:
+    name: '&aZombie III'
+    prefix: '&f[&aZombieIII&f]'
+    custo: 20000
+    ultimo: true
+    item_id: 367
+    item_data: 0
+    item_slot: 29
+    item_lore:
+      - '&7Nesse Rank voce tem direito a:'
+      - '&7Mina Zombie, Kit zombie'

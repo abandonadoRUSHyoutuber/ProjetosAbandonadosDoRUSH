@@ -1,0 +1,72 @@
+# lista com o nome dos vips [Estes nomes devem ser o mesmo do grupo do PermissionsEx]
+vips:
+  vip: '&f[&bVIP&f]'
+
+# Titulo do inventario de ranks
+ranks_title: '&4Todos Ranks'
+
+# Titulo do inventario de rankup
+rankup_title: '&0Hora do upgrade'
+
+# Nome do item do inventario
+rankup_name: '&b&lDeseja upar para &f&l%proximoRank%&b?'
+rankup_lore:
+  - '&a&lCusto &f&l%custo%'
+
+# Titulo do item para confirmar
+confirmar: '&aConfirmar'
+
+# Titulo do item para cancelar
+cancelar: '&cCancelar'
+
+# Mensagem quando o player nao tem saldo suficiente
+saldo_insulficiente: '&cVoce precisa de &f%custo% &cpara upar ao rank &f%proximoRank%'
+
+# Mensagem para quando o player esta no ultimo rank
+ultimo_rank: '&f%rank% &ce o nosso ultimo rank!'
+
+# Mensagem enviada para o player ao dar rankup
+player_rankup:
+  - ''
+  - '  &7=>Voce pagou &f%custo% &7para upar ao rank %rank%'
+  - ''
+
+# Mensagem enviada para o todos os players ao dar rankup
+players_rankup:
+  - ''
+  - '  &7=>&f%player% &7pagou &f%custo% &7para upar ao rank %rank%'
+  - ''
+
+# Configurações da scoreboad
+titulo_score: '&6&lD-RANKUP'
+lines_score:
+  - ''
+  - '&aMoney: &f%money%'
+  - ''
+  - '&6Rank: &f%rank%'
+  - '&6Proximo: &f%proximoRank%'
+  - '&6Progresso: &f%progresso%'
+  - ''
+  - '&awww.drankup.com.br'
+
+# Quando o player já possui coins suficientes para upar de rank
+# Essa mensagem aparece no Progresso da scoreboard
+progress_completo: '&fHora De Upar!'
+
+# Na scoreboard, quando o player estiver no ultimo rank
+score_ultimo: 'Nenhum'
+
+# Formato do tab para players que tem permissao
+# PlaceHolders: %prefix%, %name%, %displayname%, %suffix%
+TabFormat: '%prefix% &7%name% %suffix% '
+
+# Formato do tab para players que nao tem permissao
+# PlaceHolders: %prefix%, %name%, %displayname%, %suffix%
+NoPermFormat: '&7%name%'
+
+# titulo e subtitulo - inventario cheio
+full_title: '&bOpsss!'
+full_subtitle: '&bSeu inventario esta cheio'
+
+# Player sem permissao
+perm_null: '&7Voce nao tem permissao para isso'
