@@ -1,0 +1,14 @@
+main: me.leitinhooow.central.Main
+version: 1.0
+authors: [Leitinhooow]
+name: WomboLobby
+commands: 
+  fly:
+  tag:
+  tpall:
+  pchat:
+  tell:
+  staffchat:
+  gm:
+  build:
+  cc:
