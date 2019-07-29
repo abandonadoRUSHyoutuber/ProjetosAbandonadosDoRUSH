@@ -1,0 +1,7 @@
+name: StandLoja
+main: bLoja.Main.Main
+version: 1.0
+commands:
+   lojagui:
+      description: Comando base do plugin de Lojas!.
+      usage: /shop
