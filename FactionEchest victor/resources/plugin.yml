@@ -1,0 +1,5 @@
+name: SuperFacChest
+version: 1.0
+main: br.dev.victor696.superfacchest.SuperFacChest
+commands:
+    facchest:
