@@ -1,0 +1,8 @@
+name: FTopNPCs
+author: KickPost
+main: br.com.kickpost.ftopnpc.FTopNpc
+version: 1.0
+depend: [Factions, MassiveCore, HolographicDisplays, FTop]
+commands:
+  setnpc:
+    permission: npc.set
