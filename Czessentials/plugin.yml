@@ -1,0 +1,27 @@
+name: CzEssentials
+main: me.devleo.czpvpessentials.Main
+version: 1.0
+author: LeoDevi
+
+commands:
+   anunciar:
+   changelog:
+   convidado:
+   reparar:
+   reportar:
+   reportes:
+   minas:
+   lojas:
+   arenas:
+   warps:
+    aliases: [warp]
+   requisitos:
+    aliases: [yt, tag, youtuber]
+   ticket:
+    aliases: [ajuda]
+   tickets:
+   irloja:
+   setloja:
+   delloja:
+   toggle:
+   mobs:

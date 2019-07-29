@@ -1,0 +1,6 @@
+mysql:
+   host-name: localhost
+   porta: 3306
+   database: Caixas
+   usuario: root
+   senha:
