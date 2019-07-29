@@ -1,0 +1,6 @@
+name: ExtraTags
+description: Crie varias tags para legendChat com permissoes
+main: me.ep.extratags.ExtraTags
+version: 1.0
+authors: [ExtraPlays]
+commands:
