@@ -1,0 +1,7 @@
+name: DEspeciais
+main: br.itensespeciais.main.Main
+author: Dargoh
+version: 1.0
+commands:
+   pegarespeciais:
+   giveespecial:

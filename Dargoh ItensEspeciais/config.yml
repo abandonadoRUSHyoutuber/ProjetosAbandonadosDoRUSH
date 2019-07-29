@@ -1,0 +1,91 @@
+#
+# DEspeciais v1.0 - Criador - Dargoh (GamersBoard)
+#
+# EXEMPLO Configuração de itens:
+
+# * nome (O nome do item mostrado in-game)
+# * lore (Informações mostradas na descrição do item in-game)
+# * glow (Adicionar efeito de encantamento no item)
+# * stackable (Caso esteja FALSE o item não irá stackar normalmente com outros itens iguais)
+
+# nome: Capsula de Voo
+# lore:
+#     - '&eUse este item para voar junto'
+#     - '&ecom a pérola por 4 segundos'
+# glow: true
+# enabled: true (FALSE: Desativar item no servidor, TRUE: Ativar item no servidor) *Usado para caso você não queira usar algum item do plugin*
+
+####################
+# ITENS CONFIGURAR #
+####################
+capsula:
+  nome: '&eCapsula de voo'
+  lore:
+    - '&7Use este item para voar ao local'
+    - '&7em que estiver olhando por 4 segundos.'
+  glow: true
+
+lancador:
+  nome: '&eLançador'
+  lore:
+    - '&7Use este item para ser arremessado'
+    - '&7em 40 blocos de altura.'
+  glow: false
+
+raiomestre:
+  nome: '&eRaio Mestre'
+  lore:
+    - '&7Use este item para lançar um raio'
+    - '&7no bloco que você estiver olhando.'
+  glow: true
+
+silktouch:
+  nome: '&bPicareta de Bedrock'
+  lore:
+    - '&1'
+    - '&7Usando esta picareta voce tem'
+    - '&7o poder de retirar bedrocks'
+    - '&2'
+
+purificador:
+  nome: '&ePurificador'
+  lore:
+    - '&7Esta poção serve para remover'
+    - '&7os efeitos de poção de seus inimigos.'
+
+creepereletrizado:
+  nome: '&aOvo de Creeper Eletrizado'
+  lore:
+    - '&7Este item irá spawnar um creeper'
+    - '&7que foi atingido por um raio, sua'
+    - '&7explosão é maior e mais poderosa'
+    - '&7do que a de um creeper normal.'
+  glow: true
+
+fragmentodepoder:
+  nome: '&dFragmento de Poder Máximo'
+  lore:
+    - '&7Este é um fragmento de poder máximo'
+    - '&7com 4 fragmentos será possível fazer'
+    - '&7um poder máximo.'
+  glow: true
+
+podermaximo:
+  nome: '&6Poder Máximo'
+  lore:
+    - '&7Use para aumentar seu poder máximo'
+    - '&7e tornar sua facção mais forte.'
+
+poderinstantaneo:
+  nome: '&ePoder Instântaneo'
+  lore:
+    - '&7Use para receber 1 ponto'
+    - '&7de poder instântamente'
+  glow: true
+
+armadilha:
+  nome: '&eArmadilha'
+  lore:
+    - '&7Este item forma uma armadilha 3x3'
+    - '&7de teias para travar seus inimigos.'
+  glow: true
