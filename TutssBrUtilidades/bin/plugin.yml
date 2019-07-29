@@ -1,0 +1,14 @@
+main: me.leitinho.Main
+version: 1.0
+author: Leitinhooow
+name: TutssBrUtilidades
+commands: 
+  aplicar:
+  pvp:
+  arena:
+  tag:
+  staff:
+  chat:
+  fly:
+  gm:
+  tell:
