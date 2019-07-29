@@ -1,0 +1,682 @@
+kits:
+   gui:
+      your_kits: '&6Your Kits!'
+      other_kits: '&cOther Kits!'
+      # if player have permission kitpvp.kit.*
+      all_kits: '&7&k!!&r &bYou have all kits :D &7&k!!' 
+   none:
+      ability: 'None'
+   ajnin:
+      sword: '&7Sword'
+      sharp: true
+      soup: true
+      soup_name: '&7Soup'
+      recraft: true
+      red_mushroom: '&cRed mushroom'
+      brown_mushroom: '&6Brown mushroom'
+      bowl: '&7Bowl'
+      armor: true
+      armor_name: '&6Armor'
+      ability: 'Ajnin'
+      msg_cooldown: '&cWait cooldown!'
+      msg_teleported: '&cTeleported'
+      msg_hited_far: '&cThe Last player to hit you this far!'
+      use_kit_text: '&7Kit &8» &aAjnin'
+      use_kit_title: '&7Kit &8» &aAjnin'
+      gui_name: '&7Kit &8» &aAjnin'
+      desc: false
+      gui_desc:
+        - '&2configure'
+        - '&bdesc'
+   archer:
+      sword: '&7Sword'
+      sharp: true
+      soup: true
+      soup_name: '&7Soup'
+      recraft: true
+      red_mushroom: '&cRed mushroom'
+      brown_mushroom: '&6Brown mushroom'
+      bowl: '&7Bowl'
+      bow: '&9Bow'
+      arrow: '&9Arrow'
+      armor: true
+      armor_name: '&6Armor'
+      ability: 'Archer'
+      use_kit_text: '&7Kit &8» &aArcher'
+      use_kit_title: '&7Kit &8» &aArcher'
+      gui_name: '&7Kit &8» &aArcher'
+      desc: false
+      gui_desc:
+        - '&2configure'
+        - '&bdesc'
+   anchor:
+      sword: '&7Sword'
+      sharp: true
+      soup: true
+      soup_name: '&7Soup'
+      recraft: true
+      red_mushroom: '&cRed mushroom'
+      brown_mushroom: '&6Brown mushroom'
+      bowl: '&7Bowl'
+      armor: true
+      armor_name: '&6Armor'
+      ability: 'Anchor'
+      use_kit_text: '&7Kit &8» &aAnchor'
+      use_kit_title: '&7Kit &8» &aAnchor'
+      gui_name: '&7Kit &8» &aAnchor'
+      desc: false
+      gui_desc:
+        - '&2configure'
+        - '&bdesc'
+   backpacker:
+      sword: '&7Sword'
+      sharp: true
+      soup: true
+      soup_name: '&7Soup'
+      recraft: true
+      red_mushroom: '&cRed mushroom'
+      brown_mushroom: '&6Brown mushroom'
+      bowl: '&7Bowl'
+      armor: true
+      armor_name: '&6Armor'
+      ability: 'Backpacker'
+      msg_cooldown: '&cWait cooldown!'
+      msg_spawn: '&cExit spawn to use the kit!'
+      kit_item: '&9BackPack'
+      kit_gui: '&9BackPack'
+      kit_soup: '&7Soup'
+      use_kit_text: '&7Kit &8» &aBackpacker'
+      use_kit_title: '&7Kit &8» &aBackpacker'
+      gui_name: '&7Kit &8» &aBackpacker'
+      desc: false
+      gui_desc:
+        - '&2configure'
+        - '&bdesc'
+   berserker: 
+      sword: '&7Sword'
+      sharp: true
+      soup: true
+      soup_name: '&7Soup'
+      recraft: true
+      red_mushroom: '&cRed mushroom'
+      brown_mushroom: '&6Brown mushroom'
+      bowl: '&7Bowl'
+      armor: true
+      armor_name: '&6Armor'
+      ability: 'Berserker'
+      msg_angry: '&cYou got angry!'
+      use_kit_text: '&7Kit &8» &aBerserker'
+      use_kit_title: '&7Kit &8» &aBerserker'
+      gui_name: '&7Kit &8» &aBerserker'
+      desc: false
+      gui_desc:
+        - '&2configure'
+        - '&bdesc'
+   pvp:
+      sword: '&7Sword'
+      sharp: true
+      soup: true
+      soup_name: '&7Soup'
+      recraft: true
+      red_mushroom: '&cRed mushroom'
+      brown_mushroom: '&6Brown mushroom'
+      bowl: '&7Bowl'
+      armor: true
+      armor_name: '&6Armor'
+      ability: 'PvP'
+      use_kit_text: '&7Kit &8» &aPvP'
+      use_kit_title: '&7Kit &8» &aPvP'
+      gui_name: '&7Kit &8» &aPvP'
+      desc: false
+      gui_desc:
+        - '&2configure'
+        - '&bdesc'
+   kangaroo:
+      sword: '&7Sword'
+      sharp: true
+      soup: true
+      soup_name: '&7Soup'
+      recraft: true
+      red_mushroom: '&cRed mushroom'
+      brown_mushroom: '&6Brown mushroom'
+      bowl: '&7Bowl'
+      armor: true
+      armor_name: '&6Armor'
+      ability: 'Kangaroo'
+      msg_spawn: '&cExit spawn to use the kit!'
+      kit_item: '&9Kangaroo'
+      use_kit_text: '&7Kit &8» &aKangaroo'
+      use_kit_title: '&7Kit &8» &aKangaroo'
+      gui_name: '&7Kit &8» &aKangaroo'
+      desc: false
+      gui_desc:
+        - '&2configure'
+        - '&bdesc'
+   fisherman:
+      sword: '&7Sword'
+      sharp: true
+      soup: true
+      soup_name: '&7Soup'
+      recraft: true
+      red_mushroom: '&cRed mushroom'
+      brown_mushroom: '&6Brown mushroom'
+      bowl: '&7Bowl'
+      armor: true
+      armor_name: '&6Armor'
+      ability: 'Fisherman'
+      kit_item: '&9Fisherman'
+      use_kit_text: '&7Kit &8» &aFisherman'
+      use_kit_title: '&7Kit &8» &aFisherman'
+      gui_name: '&7Kit &8» &aFisherman'
+      desc: false
+      gui_desc:
+        - '&2configure'
+        - '&bdesc'
+   sonic:
+      sword: '&7Sword'
+      sharp: true
+      soup: true
+      soup_name: '&7Soup'
+      recraft: true
+      red_mushroom: '&cRed mushroom'
+      brown_mushroom: '&6Brown mushroom'
+      bowl: '&7Bowl'
+      armor: true
+      armor_name: '&6Armor'
+      ability: 'Sonic'
+      msg_cooldown: '&cWait cooldown!'
+      msg_spawn: '&cExit spawn to use the kit!'
+      msg_kit_use: '&cYou used his kit!'
+      kit_item: '&9Sonic'
+      use_kit_text: '&7Kit &8» &aSonic'
+      use_kit_title: '&7Kit &8» &aSonic'
+      gui_name: '&7Kit &8» &aSonic'
+      desc: false
+      gui_desc:
+        - '&2configure'
+        - '&bdesc'
+   deshfire:
+      sword: '&7Sword'
+      sharp: true
+      soup: true
+      soup_name: '&7Soup'
+      recraft: true
+      red_mushroom: '&cRed mushroom'
+      brown_mushroom: '&6Brown mushroom'
+      bowl: '&7Bowl'
+      armor: true
+      armor_name: '&6Armor'
+      ability: 'Deshfire'
+      msg_cooldown: '&cWait cooldown!'
+      msg_spawn: '&cExit spawn to use the kit!'
+      msg_kit_use: '&cYou used his kit!'
+      kit_item: '&9Deshfire'
+      use_kit_text: '&7Kit &8» &aDeshfire'
+      use_kit_title: '&7Kit &8» &aDeshfire'
+      gui_name: '&7Kit &8» &aDeshfire'
+      desc: false
+      gui_desc:
+        - '&2configure'
+        - '&bdesc'
+   reaper:
+      sword: '&7Sword'
+      sharp: true
+      soup: true
+      soup_name: '&7Soup'
+      recraft: true
+      red_mushroom: '&cRed mushroom'
+      brown_mushroom: '&6Brown mushroom'
+      bowl: '&7Bowl'
+      armor: true
+      armor_name: '&6Armor'
+      ability: 'Reaper'
+      kit_item: '&9Reaper'
+      use_kit_text: '&7Kit &8» &aReaper'
+      use_kit_title: '&7Kit &8» &aReaper'
+      gui_name: '&7Kit &8» &aReaper'
+      desc: false
+      gui_desc:
+        - '&2configure'
+        - '&bdesc'
+   phantom:
+      sword: '&7Sword'
+      sharp: true
+      soup: true
+      soup_name: '&7Soup'
+      recraft: true
+      red_mushroom: '&cRed mushroom'
+      brown_mushroom: '&6Brown mushroom'
+      bowl: '&7Bowl'
+      armor: true
+      armor_name: '&6Armor'
+      ability: 'Phantom'
+      kit_item: '&9Phantom'
+      msg_cooldown: '&cWait cooldown!'
+      msg_spawn: '&cExit spawn to use the kit!'
+      msg_kit_use: '&cYou used his kit!'
+      use_kit_text: '&7Kit &8» &aPhantom'
+      use_kit_title: '&7Kit &8» &aPhantom'
+      gui_name: '&7Kit &8» &aPhantom'
+      desc: false
+      gui_desc:
+        - '&2configure'
+        - '&bdesc'
+   urgal:
+      sword: '&7Sword'
+      sharp: true
+      soup: true
+      soup_name: '&7Soup'
+      recraft: true
+      red_mushroom: '&cRed mushroom'
+      brown_mushroom: '&6Brown mushroom'
+      bowl: '&7Bowl'
+      armor: true
+      armor_name: '&6Armor'
+      ability: 'Urgal'
+      kit_item: '&9Urgal'
+      kit_amount: 2
+      use_kit_text: '&7Kit &8» &aUrgal'
+      use_kit_title: '&7Kit &8» &aUrgal'
+      gui_name: '&7Kit &8» &aUrgal'
+      desc: false
+      gui_desc:
+        - '&2configure'
+        - '&bdesc'
+   grandpa:
+      sword: '&7Sword'
+      sharp: true
+      soup: true
+      soup_name: '&7Soup'
+      recraft: true
+      red_mushroom: '&cRed mushroom'
+      brown_mushroom: '&6Brown mushroom'
+      bowl: '&7Bowl'
+      armor: true
+      armor_name: '&6Armor'
+      ability: 'Urgal'
+      kit_item: '&9Grandpa'
+      kit_knock_level: 2
+      use_kit_text: '&7Kit &8» &aGrandpa'
+      use_kit_title: '&7Kit &8» &aGrandpa'
+      gui_name: '&7Kit &8» &aGrandpa'
+      desc: false
+      gui_desc:
+        - '&2configure'
+        - '&bdesc'
+   snail:
+      sword: '&7Sword'
+      sharp: true
+      soup: true
+      soup_name: '&7Soup'
+      recraft: true
+      red_mushroom: '&cRed mushroom'
+      brown_mushroom: '&6Brown mushroom'
+      bowl: '&7Bowl'
+      armor: true
+      armor_name: '&6Armor'
+      ability: 'Snail'
+      use_kit_text: '&7Kit &8» &aSnail'
+      use_kit_title: '&7Kit &8» &aSnail'
+      gui_name: '&7Kit &8» &aSnail'
+      desc: false
+      gui_desc:
+        - '&2configure'
+        - '&bdesc'
+   hulk:
+      sword: '&7Sword'
+      sharp: true
+      soup: true
+      soup_name: '&7Soup'
+      recraft: true
+      red_mushroom: '&cRed mushroom'
+      brown_mushroom: '&6Brown mushroom'
+      bowl: '&7Bowl'
+      armor: true
+      armor_name: '&6Armor'
+      ability: 'Hulk'
+      msg_cooldown: '&cWait cooldown!'
+      msg_spawn: '&cExit spawn to use the kit!'
+      use_kit_text: '&7Kit &8» &aHulk'
+      use_kit_title: '&7Kit &8» &aHulk'
+      gui_name: '&7Kit &8» &aHulk'
+      desc: false
+      gui_desc:
+        - '&2configure'
+        - '&bdesc'
+   monk:
+      sword: '&7Sword'
+      sharp: true
+      soup: true
+      soup_name: '&7Soup'
+      recraft: true
+      red_mushroom: '&cRed mushroom'
+      brown_mushroom: '&6Brown mushroom'
+      bowl: '&7Bowl'
+      armor: true
+      armor_name: '&6Armor'
+      ability: 'Monk'
+      kit_item: '&9Monk'
+      msg_kit_use: '&cYou used his kit!'
+      msg_cooldown: '&cWait cooldown!'
+      msg_spawn: '&cExit spawn to use the kit!'
+      msg_monked: '&bYou were  monked by $player$'
+      use_kit_text: '&7Kit &8» &aMonk'
+      use_kit_title: '&7Kit &8» &aMonk'
+      gui_name: '&7Kit &8» &aMonk'
+      desc: false
+      gui_desc:
+        - '&2configure'
+        - '&bdesc'
+   stomper:
+      sword: '&7Sword'
+      sharp: true
+      soup: true
+      soup_name: '&7Soup'
+      recraft: true
+      red_mushroom: '&cRed mushroom'
+      brown_mushroom: '&6Brown mushroom'
+      bowl: '&7Bowl'
+      armor: true
+      armor_name: '&6Armor'
+      ability: 'Stomper'
+      use_kit_text: '&7Kit &8» &aStomper'
+      use_kit_title: '&7Kit &8» &aStomper'
+      gui_name: '&7Kit &8» &aStomper'
+      desc: false
+      gui_desc:
+        - '&2configure'
+        - '&bdesc'
+   viper:
+      sword: '&7Sword'
+      sharp: true
+      soup: true
+      soup_name: '&7Soup'
+      recraft: true
+      red_mushroom: '&cRed mushroom'
+      brown_mushroom: '&6Brown mushroom'
+      bowl: '&7Bowl'
+      armor: true
+      armor_name: '&6Armor'
+      ability: 'Viper'
+      use_kit_text: '&7Kit &8» &aViper'
+      use_kit_title: '&7Kit &8» &aViper'
+      gui_name: '&7Kit &8» &aViper'
+      desc: false
+      gui_desc:
+        - '&2configure'
+        - '&bdesc'
+   poseidon:
+      sword: '&7Sword'
+      sharp: true
+      soup: true
+      soup_name: '&7Soup'
+      recraft: true
+      red_mushroom: '&cRed mushroom'
+      brown_mushroom: '&6Brown mushroom'
+      bowl: '&7Bowl'
+      armor: true
+      armor_name: '&6Armor'
+      ability: 'Poseidon'
+      use_kit_text: '&7Kit &8» &aPoseidon'
+      use_kit_title: '&7Kit &8» &aPoseidon'
+      gui_name: '&7Kit &8» &aPoseidon'
+      desc: false
+      gui_desc:
+        - '&2configure'
+        - '&bdesc'
+   fireman:
+      sword: '&7Sword'
+      sharp: true
+      soup: true
+      soup_name: '&7Soup'
+      recraft: true
+      red_mushroom: '&cRed mushroom'
+      brown_mushroom: '&6Brown mushroom'
+      bowl: '&7Bowl'
+      armor: true
+      armor_name: '&6Armor'
+      ability: 'Fireman'
+      use_kit_text: '&7Kit &8» &aFireman'
+      use_kit_title: '&7Kit &8» &aFireman'
+      gui_name: '&7Kit &8» &aFireman'
+      desc: false
+      gui_desc:
+        - '&2configure'
+        - '&bdesc'
+   switcher:
+      sword: '&7Sword'
+      sharp: true
+      soup: true
+      soup_name: '&7Soup'
+      recraft: true
+      red_mushroom: '&cRed mushroom'
+      brown_mushroom: '&6Brown mushroom'
+      bowl: '&7Bowl'
+      armor: true
+      armor_name: '&6Armor'
+      ability: 'Switcher'
+      kit_item: '&9Switcher'
+      kit_amount: 8
+      msg_spawn: '&cExit spawn to use the kit!'
+      use_kit_text: '&7Kit &8» &aSwitcher'
+      use_kit_title: '&7Kit &8» &aSwitcher'
+      gui_name: '&7Kit &8» &aSwitcher'
+      desc: false
+      gui_desc:
+        - '&2configure'
+        - '&bdesc'
+   ninja:
+      sword: '&7Sword'
+      sharp: true
+      soup: true
+      soup_name: '&7Soup'
+      recraft: true
+      red_mushroom: '&cRed mushroom'
+      brown_mushroom: '&6Brown mushroom'
+      bowl: '&7Bowl'
+      armor: true
+      armor_name: '&6Armor'
+      ability: 'Ninja'
+      msg_cooldown: '&cWait cooldown!'
+      msg_teleported: '&cTeleported'
+      msg_hited_far: '&cThe Last player to hit you this far!'
+      use_kit_text: '&7Kit &8» &aNinja'
+      use_kit_title: '&7Kit &8» &aNinja'
+      gui_name: '&7Kit &8» &aNinja'
+      desc: false
+      gui_desc:
+        - '&2configure'
+        - '&bdesc'
+   ryu:
+      sword: '&7Sword'
+      sharp: true
+      soup: true
+      soup_name: '&7Soup'
+      recraft: true
+      red_mushroom: '&cRed mushroom'
+      brown_mushroom: '&6Brown mushroom'
+      bowl: '&7Bowl'
+      armor: true
+      armor_name: '&6Armor'
+      ability: 'Ryu'
+      msg_kit_use: '&cYou used his kit!'
+      msg_cooldown: '&cWait cooldown!'
+      msg_spawn: '&cExit spawn to use the kit!'
+      kit_item: '&9Haduken'
+      use_kit_text: '&7Kit &8» &aRyu'
+      use_kit_title: '&7Kit &8» &aRyu'
+      gui_name: '&7Kit &8» &aRyu'
+      desc: false
+      gui_desc:
+        - '&2configure'
+        - '&bdesc'
+   gladiator:
+      sword: '&7Sword'
+      sharp: true
+      soup: true
+      soup_name: '&7Soup'
+      recraft: true
+      red_mushroom: '&cRed mushroom'
+      brown_mushroom: '&6Brown mushroom'
+      bowl: '&7Bowl'
+      armor: true
+      armor_name: '&6Armor'
+      ability: 'Gladiator'
+      msg_fighting: '&cAlready you are fighting!'
+      msg_loc_error: '&cYou can not use here!'
+      msg_pulled: '&cYou challenged a player! You have 5 seconds of invincibility!$line$&cIf not has no winner after 4 minutes you back to their place of origin!'
+      msg_pulled_who: '&cYou have been challenged! You have 5 seconds of invincibility!$line$&cIf not has no winner after 4 minutes you back to their place of origin!'
+      msg_no_winner: '&cThere was no no winner, you were teleported to their place of origin!'
+      msg_won: '&bYou won the battle against $player$!'
+      msg_spawn: '&cExit spawn to use the kit!'
+      kit_item: '&91v1'
+      use_kit_text: '&7Kit &8» &aGladiator'
+      use_kit_title: '&7Kit &8» &aGladiator'
+      gui_name: '&7Kit &8» &aGladiator'
+      desc: false
+      gui_desc:
+        - '&2configure'
+        - '&bdesc'
+   souper:
+      sword: '&7Sword'
+      sharp: true
+      soup: true
+      soup_name: '&7Soup'
+      recraft: true
+      red_mushroom: '&cRed mushroom'
+      brown_mushroom: '&6Brown mushroom'
+      bowl: '&7Bowl'
+      armor: true
+      armor_name: '&6Armor'
+      ability: 'Souper'
+      msg_filled: '&cYour inventory filled soups!'
+      use_kit_text: '&7Kit &8» &aSouper'
+      use_kit_title: '&7Kit &8» &aSouper'
+      gui_name: '&7Kit &8» &aSouper'
+      desc: false
+      gui_desc:
+        - '&2configure'
+        - '&bdesc'
+   camel:
+      sword: '&7Sword'
+      sharp: true
+      soup: true
+      soup_name: '&7Soup'
+      recraft: true
+      red_mushroom: '&cRed mushroom'
+      brown_mushroom: '&6Brown mushroom'
+      bowl: '&7Bowl'
+      armor: true
+      armor_name: '&6Armor'
+      ability: 'Camel'
+      use_kit_text: '&7Kit &8» &aCamel'
+      use_kit_title: '&7Kit &8» &aCamel'
+      gui_name: '&7Kit &8» &aCamel'
+      desc: false
+      gui_desc:
+        - '&2configure'
+        - '&bdesc'
+   neurotic:
+      sword: '&7Sword'
+      sharp: true
+      soup: true
+      soup_name: '&7Soup'
+      recraft: true
+      red_mushroom: '&cRed mushroom'
+      brown_mushroom: '&6Brown mushroom'
+      bowl: '&7Bowl'
+      armor: true
+      armor_name: '&6Armor'
+      ability: 'Neurotic'
+      use_kit_text: '&7Kit &8» &aNeurotic'
+      use_kit_title: '&7Kit &8» &aNeurotic'
+      gui_name: '&7Kit &8» &aNeurotic'
+      desc: false
+      gui_desc:
+        - '&2configure'
+        - '&bdesc'
+   vaccum:
+      sword: '&7Sword'
+      sharp: true
+      soup: true
+      soup_name: '&7Soup'
+      recraft: true
+      red_mushroom: '&cRed mushroom'
+      brown_mushroom: '&6Brown mushroom'
+      bowl: '&7Bowl'
+      armor: true
+      armor_name: '&6Armor'
+      ability: 'Vaccum'
+      kit_item: '&9Vaccum'
+      msg_pull: '&cYou drew this drawing!'
+      msg_kit_use: '&cYou used his kit!'
+      msg_cooldown: '&cWait cooldown!'
+      msg_spawn: '&cExit spawn to use the kit!'
+      use_kit_text: '&7Kit &8» &aVaccum'
+      use_kit_title: '&7Kit &8» &aVaccum'
+      gui_name: '&7Kit &8» &aVaccum'
+      desc: false
+      gui_desc:
+        - '&2configure'
+        - '&bdesc'
+   forcefield:
+      sword: '&7Sword'
+      sharp: true
+      soup: true
+      soup_name: '&7Soup'
+      recraft: true
+      red_mushroom: '&cRed mushroom'
+      brown_mushroom: '&6Brown mushroom'
+      bowl: '&7Bowl'
+      armor: true
+      armor_name: '&6Armor'
+      ability: 'Forcefield'
+      kit_item: '&9Forcefield'
+      msg_kit_use: '&cYou used his kit!'
+      msg_cooldown: '&cWait cooldown!'
+      msg_spawn: '&cExit spawn to use the kit!'
+      use_kit_text: '&7Kit &8» &aForcefield'
+      use_kit_title: '&7Kit &8» &aForcefield'
+      gui_name: '&7Kit &8» &aForcefield'
+      desc: false
+      gui_desc:
+        - '&2configure'
+        - '&bdesc'
+   neo:
+      sword: '&7Sword'
+      sharp: true
+      soup: true
+      soup_name: '&7Soup'
+      recraft: true
+      red_mushroom: '&cRed mushroom'
+      brown_mushroom: '&6Brown mushroom'
+      bowl: '&7Bowl'
+      armor: true
+      armor_name: '&6Armor'
+      ability: 'Neo'
+      use_kit_text: '&7Kit &8» &aNeo'
+      use_kit_title: '&7Kit &8» &aNeo'
+      gui_name: '&7Kit &8» &aNeo'
+      desc: false
+      gui_desc:
+        - '&2configure'
+        - '&bdesc'
+   frosty:
+      sword: '&7Sword'
+      sharp: true
+      soup: true
+      soup_name: '&7Soup'
+      recraft: true
+      red_mushroom: '&cRed mushroom'
+      brown_mushroom: '&6Brown mushroom'
+      bowl: '&7Bowl'
+      armor: true
+      armor_name: '&6Armor'
+      ability: 'Frosty'
+      use_kit_text: '&7Kit &8» &aFrosty'
+      use_kit_title: '&7Kit &8» &aFrosty'
+      gui_name: '&7Kit &8» &aFrosty'
+      desc: false
+      gui_desc:
+        - '&2configure'
+        - '&bdesc'

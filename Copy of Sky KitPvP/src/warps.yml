@@ -1,0 +1,35 @@
+warps:
+  true: true
+  spawn:
+    x: 45.330048828905944
+    y: 57.0
+    z: -287.3766808746723
+  fps:
+    msg_chat: '&7Warp &8» &aFPS'
+    msg_title: '&7Warp &8» &aFPS'
+    ability: 'Fps'
+    x: 45.330048828905944
+    y: 57.0
+    z: -287.3766808746723
+  main:
+    msg_chat: '&7Warp &8» &aMain'
+    msg_title: '&7Warp &8» &aMain'
+    ability: 'Main'
+    x: 45.330048828905944
+    y: 57.0
+    z: -287.3766808746723
+  lava:
+    msg_chat: '&7Warp &8» &aLava Challange'
+    msg_title: '&7Warp &8» &aChallange'
+    ability: 'Lava'
+    x: 45.330048828905944
+    y: 57.0
+    z: -287.3766808746723
+  knock:
+    msg_chat: '&7Warp &8» &aKnockBack'
+    msg_title: '&7Warp &8» &aKnockBack'
+    ability: 'Knock'
+    x: 45.330048828905944
+    y: 57.0
+    z: -287.3766808746723
+# 1v1 in 1v1.yml

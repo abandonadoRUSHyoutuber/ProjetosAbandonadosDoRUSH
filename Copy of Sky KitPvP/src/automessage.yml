@@ -1,0 +1,7 @@
+auto_msg:
+   show: false
+   delay: 60
+   msg: 
+      - '&7[SkyKits]&c AutoMSG please configure me :D'
+      - '&7[SkyKits]&c AutoMSG please configure me :)'
+      - '&7[SkyKits]&c AutoMSG please configure me :3'

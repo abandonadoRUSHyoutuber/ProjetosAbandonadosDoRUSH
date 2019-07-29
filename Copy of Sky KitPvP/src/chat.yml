@@ -1,0 +1,3 @@
+chat_prefix: '&7[$rank$&7]$player$: '
+custom: true
+# chat custom makes connection with MySQL and can give lag in some cases

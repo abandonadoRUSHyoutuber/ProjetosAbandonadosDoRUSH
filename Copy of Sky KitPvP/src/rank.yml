@@ -1,0 +1,27 @@
+ranks: 
+  gui: 
+    ranks: 
+      - '&6Bronze IV&7 (0 to 100 kills)'
+      - '&6Bronze III&7 (100 to 200 kills)'
+      - '&6Bronze II&7 (200 to 300 kills)'
+      - '&6Bronze I&7 (300 to 400 kills)'
+      - '&8Silver VI&7 (300 to 500 kills)'
+      - '&8Silver III&7 (500 to 600 kills)'
+      - '&8Silver II&7 (600 to 800 kills)'
+      - '&8Silver I&7 (800 to 1000 kills)'
+      - '&eGold VI&7 (1000 to 1500 kills)'
+      - '&eGold III&7 (1500 to 2000 kills)'
+      - '&eGold II&7 (2000 to 2500 kills)'
+      - '&eGold I&7 (2500 to 3000 kills)'
+      - '&bDiamond IV&7 (3000 to 4000 kills)'
+      - '&bDiamond III&7 (4000 to 5000 kills)'
+      - '&bDiamond II&7 (5000 to 6000 kills)'
+      - '&bDiamond I&7 (6000 to infinity :D)'
+    seerank: 
+      - '&7To view the rank'
+      - '&7another player'
+      - '&7Use /rank <nick>'
+  rank1: 'Bronze'
+  rank2: 'Silver'
+  rank3: 'Gold'
+  rank4: 'Diamond'

@@ -1,0 +1,150 @@
+# nick owner
+Owner: 'Abusado'
+
+# motd
+Motd: '&cSkyKits<linha>&4Online: <online>'
+Slots: 120
+
+# join resetinv
+JoinInv: true
+
+# adminmode messages
+adminMSG:
+  enter: '&cYou entered the ADMIN mode!'
+  exit: '&cYou went in ADMIN mode!'
+  quickchange: '&cYou used rapid exchange!'
+  autosoupUse: '&cWho has been tested: $tested$$line$&cResult: He uses autoSoup'
+  autosoupNoUse: '&cWho has been tested: $tested$$line$&cResult: It does not use autoSoup'
+# adminmode itens
+adminItem:
+  quickchange: '&eQuick change'
+  cage: '&eCage'
+  noFall: '&eNo Fall'
+  speed: '&eSpeed'
+  autosoup: '&eAuto-Soup'
+
+# scoreboard
+ScoreBoard: '&cSkyKits'
+CorScore1: 'c'
+CorScore2: '8'
+CorScore3: '7'
+
+# gm
+survival: '&cYour gamemode was changed to survival!'
+creative: '&cYour gamemode was changed to creative!'
+
+# rank
+RankNoPlayer: '&cThis player not in this database!'
+
+# report
+ReportSucess: '&cSuccessfully reported player!'
+ReportFormat: '&c--=[REPORT]=--$line$&cWho reported: &7$who$$line$&cReported: &7$reported$$line$&cReason: &7$reason$$line$&c--=[REPORT]=--'
+ReportSound: true
+
+# set warps
+Setted: '&cSetted!'
+
+# tp
+tpall: '&cYou teleported all players to you!'
+
+# staffchat
+SFEnter: '&cYou entered the StaffChat!'
+SFExit: '&cYou left the StaffChat!'
+SFFormat: '&e&lStaffChat&7[$player$]&e » &7$msg$'
+
+# spawn command
+SpawnKit: '&cTake a kit to use this command!'
+SpawnCombatLog: '&cNot you can use this command in combat!'
+SpawnGladiator: '&cNot you can use this command in gladiator!'
+SpawnTeleport: '&cYou have been teleported to spawn!'
+
+# score
+score:
+  Disabled: '&cYou turned off the scoreboard!'
+  Enabled: '&cYou activated the scoreboard!'
+
+# fly
+fly:
+  Disabled: '&cDisabled flight!'
+  Enabled: '&cEnabled flight!'
+
+# build
+BuildEnter: '&cYou have entered the construction mode!' 
+BuildExit: '&cYou left the construction mode!'
+
+# chat
+ChatCC: '&cChat clean by: &7$player$'
+ChatOn: '&b&lCHAT ON!'
+ChatOff: '&b&lCHAT OFF!'
+ChatOffTry: '&cChat off :('
+ChatSpacer: '»'
+
+# offline player message
+OffLinePlayer: '&cOffLine Player!'
+
+# console message
+ConsolePlayer: '&cPlayer Command!'
+
+# no permission message
+NoPerm: '&cYou do not have permission!'
+
+# spawn protection message
+SpawnWon: '&cYou won the protection of the spawn'
+SpawnLost: '&cYou lost the protection of the spawn'
+
+# spawn ratio
+SpawnProtectionRatio: 12
+
+# kit message
+Kit: "&7Kit &8» &7<kit>"
+
+# tablist
+TabListUP: '$line$                    &cSkyKits                    $line$'
+TabListDown: '$line$&cSkyKits$line$'
+
+# store
+Site: '&2Store: www.skykits.com/store'
+
+# kill/death
+killed: '&bYou killed $player$ ! +100$'
+killer: '&bYou died for $player$ ! -25$'
+
+# store kits
+NoMoney: '&cYou have no money to buy this kit!'
+HaveKit: '&cYou already have this kit!'
+
+# CombatLog
+CombatLogHitted: '&cYou went into combat, if log out will be killed!'
+CombatLogHitter: '&cYou went into combat, if log out will be killed!'
+CombatLogExit: '&cYou came out fighting!'
+CombatLogQuit: '&cThe player $player$ has logged in pvp!'
+CombatLogCommands: '&cLocked commands in pvp!'
+
+# tags prefix
+tags:
+  owner: '&4&lOwner&7 '
+  admin: '&c&lAdmin&7 '
+  mod: '&5&lMod&7 '
+  trial: '&d&lTrial&7 '
+  youtuber: '&b&lYoutuber&7 '
+  pro: '&6&lPro&7 '
+  vip: '&2&lVip&7 '
+  normal: '&7'
+# warps location
+warps:
+  spawn:
+    x: 45.330048828905944
+    y: 57.0
+    z: -287.3766808746723
+  fps:
+    x: 45.330048828905944
+    y: 57.0
+    z: -287.3766808746723
+  main:
+    x: 45.330048828905944
+    y: 57.0
+    z: -287.3766808746723
+  lava:
+    x: 45.330048828905944
+    y: 57.0
+    z: -287.3766808746723

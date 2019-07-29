@@ -1,0 +1,4 @@
+SpawnWon: '&cYou won the protection of the spawn'
+SpawnLost: '&cYou lost the protection of the spawn'
+SpawnProtectionRatio: 12
+SpawnTrue: true

@@ -1,0 +1,260 @@
+store:
+   gui:
+     kit_store: '&aKits shop'
+   kits:
+     pvp:
+        cost: 20000
+        cmd: 'pex user $player$ add kitpvp.kit.pvp'
+        msg_money: '&cYou have no money!'
+        msg_buy: '&2You buy this kit!'
+        name: '&7Kit &8» &aPvP'
+        desc:
+          - '$20000'
+     kangaroo:
+        cost: 20000
+        cmd: 'pex user $player$ add kitpvp.kit.kangaroo'
+        msg_money: '&cYou have no money!'
+        msg_buy: '&2You buy this kit!'
+        name: '&7Kit &8» &aKangaroo'
+        desc:
+          - '$20000'
+     fisherman:
+        cost: 20000
+        cmd: 'pex user $player$ add kitpvp.kit.fisherman'
+        msg_money: '&cYou have no money!'
+        msg_buy: '&2You buy this kit!'
+        name: '&7Kit &8» &aFisherman'
+        desc:
+          - '$20000'
+     archer:
+        cost: 20000
+        cmd: 'pex user $player$ add kitpvp.kit.archer'
+        msg_money: '&cYou have no money!'
+        msg_buy: '&2You buy this kit!'
+        name: '&7Kit &8» &aArcher'
+        desc:
+          - '$20000'
+     sonic:
+        cost: 20000
+        cmd: 'pex user $player$ add kitpvp.kit.sonic'
+        msg_money: '&cYou have no money!'
+        msg_buy: '&2You buy this kit!'
+        name: '&7Kit &8» &aSonic'
+        desc:
+          - '$20000'
+     deshfire:
+        cost: 20000
+        cmd: 'pex user $player$ add kitpvp.kit.deshfire'
+        msg_money: '&cYou have no money!'
+        msg_buy: '&2You buy this kit!'
+        name: '&7Kit &8» &aDeshfire'
+        desc:
+          - '$20000'
+     anchor:
+        cost: 20000
+        cmd: 'pex user $player$ add kitpvp.kit.anchor'
+        msg_money: '&cYou have no money!'
+        msg_buy: '&2You buy this kit!'
+        name: '&7Kit &8» &aAnchor'
+        desc:
+          - '$20000'
+     reaper:
+        cost: 20000
+        cmd: 'pex user $player$ add kitpvp.kit.reaper'
+        msg_money: '&cYou have no money!'
+        msg_buy: '&2You buy this kit!'
+        name: '&7Kit &8» &aReaper'
+        desc:
+          - '$20000'
+     phantom:
+        cost: 20000
+        cmd: 'pex user $player$ add kitpvp.kit.phantom'
+        msg_money: '&cYou have no money!'
+        msg_buy: '&2You buy this kit!'
+        name: '&7Kit &8» &aPhantom'
+        desc:
+          - '$20000'
+     urgal:
+        cost: 20000
+        cmd: 'pex user $player$ add kitpvp.kit.urgal'
+        msg_money: '&cYou have no money!'
+        msg_buy: '&2You buy this kit!'
+        name: '&7Kit &8» &aUrgal'
+        desc:
+          - '$20000'
+     grandpa:
+        cost: 20000
+        cmd: 'pex user $player$ add kitpvp.kit.grandpa'
+        msg_money: '&cYou have no money!'
+        msg_buy: '&2You buy this kit!'
+        name: '&7Kit &8» &aGrandpa'
+        desc:
+          - '$20000'
+     snail:
+        cost: 20000
+        cmd: 'pex user $player$ add kitpvp.kit.snail'
+        msg_money: '&cYou have no money!'
+        msg_buy: '&2You buy this kit!'
+        name: '&7Kit &8» &aSnail'
+        desc:
+          - '$20000'
+     backpacker:
+        cost: 20000
+        cmd: 'pex user $player$ add kitpvp.kit.backpacker'
+        msg_money: '&cYou have no money!'
+        msg_buy: '&2You buy this kit!'
+        name: '&7Kit &8» &aBackpacker'
+        desc:
+          - '$20000'
+     hulk:
+        cost: 20000
+        cmd: 'pex user $player$ add kitpvp.kit.hulk'
+        msg_money: '&cYou have no money!'
+        msg_buy: '&2You buy this kit!'
+        name: '&7Kit &8» &aHulk'
+        desc:
+          - '$20000'
+     monk:
+        cost: 20000
+        cmd: 'pex user $player$ add kitpvp.kit.monk'
+        msg_money: '&cYou have no money!'
+        msg_buy: '&2You buy this kit!'
+        name: '&7Kit &8» &aMonk'
+        desc:
+          - '$20000'
+     stomper:
+        cost: 20000
+        cmd: 'pex user $player$ add kitpvp.kit.stomper'
+        msg_money: '&cYou have no money!'
+        msg_buy: '&2You buy this kit!'
+        name: '&7Kit &8» &aStomper'
+        desc:
+          - '$20000'
+     viper:
+        cost: 20000
+        cmd: 'pex user $player$ add kitpvp.kit.viper'
+        msg_money: '&cYou have no money!'
+        msg_buy: '&2You buy this kit!'
+        name: '&7Kit &8» &aViper'
+        desc:
+          - '$20000'
+     poseidon:
+        cost: 20000
+        cmd: 'pex user $player$ add kitpvp.kit.poseidon'
+        msg_money: '&cYou have no money!'
+        msg_buy: '&2You buy this kit!'
+        name: '&7Kit &8» &aPoseidon'
+        desc:
+          - '$20000'
+     fireman:
+        cost: 20000
+        cmd: 'pex user $player$ add kitpvp.kit.fireman'
+        msg_money: '&cYou have no money!'
+        msg_buy: '&2You buy this kit!'
+        name: '&7Kit &8» &aFireman'
+        desc:
+          - '$20000'
+     swticher:
+        cost: 20000
+        cmd: 'pex user $player$ add kitpvp.kit.swticher'
+        msg_money: '&cYou have no money!'
+        msg_buy: '&2You buy this kit!'
+        name: '&7Kit &8» &aSwticher'
+        desc:
+          - '$20000'
+     ninja:
+        cost: 20000
+        cmd: 'pex user $player$ add kitpvp.kit.ninja'
+        msg_money: '&cYou have no money!'
+        msg_buy: '&2You buy this kit!'
+        name: '&7Kit &8» &aNinja'
+        desc:
+          - '$20000'
+     ryu:
+        cost: 20000
+        cmd: 'pex user $player$ add kitpvp.kit.ryu'
+        msg_money: '&cYou have no money!'
+        msg_buy: '&2You buy this kit!'
+        name: '&7Kit &8» &aRyu'
+        desc:
+          - '$20000'
+     berserker:
+        cost: 20000
+        cmd: 'pex user $player$ add kitpvp.kit.berserker'
+        msg_money: '&cYou have no money!'
+        msg_buy: '&2You buy this kit!'
+        name: '&7Kit &8» &aBerserker'
+        desc:
+          - '$20000'
+     gladiator:
+        cost: 20000
+        cmd: 'pex user $player$ add kitpvp.kit.gladiator'
+        msg_money: '&cYou have no money!'
+        msg_buy: '&2You buy this kit!'
+        name: '&7Kit &8» &aGladiator'
+        desc:
+          - '$20000'
+     souper:
+        cost: 20000
+        cmd: 'pex user $player$ add kitpvp.kit.souper'
+        msg_money: '&cYou have no money!'
+        msg_buy: '&2You buy this kit!'
+        name: '&7Kit &8» &aSouper'
+        desc:
+          - '$20000'
+     camel:
+        cost: 20000
+        cmd: 'pex user $player$ add kitpvp.kit.camel'
+        msg_money: '&cYou have no money!'
+        msg_buy: '&2You buy this kit!'
+        name: '&7Kit &8» &aCamel'
+        desc:
+          - '$20000'
+     neurotic:
+        cost: 20000
+        cmd: 'pex user $player$ add kitpvp.kit.neurotic'
+        msg_money: '&cYou have no money!'
+        msg_buy: '&2You buy this kit!'
+        name: '&7Kit &8» &aNeurotic'
+        desc:
+          - '$20000'
+     vaccum:
+        cost: 20000
+        cmd: 'pex user $player$ add kitpvp.kit.vaccum'
+        msg_money: '&cYou have no money!'
+        msg_buy: '&2You buy this kit!'
+        name: '&7Kit &8» &aVaccum'
+        desc:
+          - '$20000'
+     ajnin:
+        cost: 20000
+        cmd: 'pex user $player$ add kitpvp.kit.ajnin'
+        msg_money: '&cYou have no money!'
+        msg_buy: '&2You buy this kit!'
+        name: '&7Kit &8» &aAjnin'
+        desc:
+          - '$20000'
+     forcefield:
+        cost: 20000
+        cmd: 'pex user $player$ add kitpvp.kit.forcefield'
+        msg_money: '&cYou have no money!'
+        msg_buy: '&2You buy this kit!'
+        name: '&7Kit &8» &aForcefield'
+        desc:
+          - '$20000'
+     neo:
+        cost: 20000
+        cmd: 'pex user $player$ add kitpvp.kit.neo'
+        msg_money: '&cYou have no money!'
+        msg_buy: '&2You buy this kit!'
+        name: '&7Kit &8» &aNeo'
+        desc:
+          - '$20000'
+     frosty:
+        cost: 20000
+        cmd: 'pex user $player$ add kitpvp.kit.frosty'
+        msg_money: '&cYou have no money!'
+        msg_buy: '&2You buy this kit!'
+        name: '&7Kit &8» &aFrosty'
+        desc:
+          - '$20000'
