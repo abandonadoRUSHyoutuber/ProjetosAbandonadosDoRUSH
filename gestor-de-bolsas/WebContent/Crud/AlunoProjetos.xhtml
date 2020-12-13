@@ -1,0 +1,59 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+	<style>
+		td.centeredColumn {
+		    text-align: center;
+		}
+		body .ui-panel .ui-panel-content {
+			border: none !important;
+		}
+	</style>
+</h:head>
+
+<h:body onload="#{alunoProjetoController.init(loginController.usuarioLogado)}">
+
+	<!-- Painel de consulta -->
+	<p:panel id="consulta" visible="#{!alunoProjetoController.editando}">
+		<p:growl></p:growl>
+		
+		<center><h1>MEUS PROJETOS</h1></center>
+		<h:form>
+			<p:dataTable 
+			    var="o" 
+			    value="#{alunoProjetoController.lista}"
+				emptyMessage="Nada para mostrar!" 
+				selectionMode="single"
+				selection="#{alunoProjetoController.selecionado}" 
+				rowKey="#{o.id}" 
+				rows="10"
+				paginator="true"
+				paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+				rowsPerPageTemplate="5,10,15"
+				currentPageReportTemplate="Listando de {startRecord} até {endRecord} de {totalRecords}"
+			>
+				<p:ajax event="rowSelect" update="consulta" />
+				<p:ajax event="rowUnselect" update="consulta" />
+				
+				<p:column styleClass="centeredColumn" headerText="Código" sortBy="#{o.id}" filterBy="#{o.id}" filterMatchMode="exact" width="100">
+					<p:outputLabel value="#{o.id}"></p:outputLabel>
+				</p:column>
+				
+				<p:column styleClass="centeredColumn" headerText="Nome" sortBy="#{o.nome}" filterBy="#{o.nome}" filterMatchMode="contains">
+					<p:outputLabel value="#{o.nome}"></p:outputLabel>
+				</p:column>
+								
+				<p:column styleClass="centeredColumn" headerText="Atividades Realizadas"  width="100">
+		              <p:commandButton icon="fa fa-folder-open-o" immediate="true" ajax="true" action="#{alunoProjetoController.abrirPopup('AtividadeRealizada.xhtml', 900, 600, true, o)}" > </p:commandButton>
+				</p:column>
+			
+			</p:dataTable>
+		</h:form>
+	</p:panel>
+
+</h:body>
+</html>

@@ -1,0 +1,172 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<style>
+		td.centeredColumn {
+		    text-align: center;
+		}
+		body .ui-panel .ui-panel-content {
+			border: none !important;
+		}
+	</style>
+</h:head>
+
+<h:body onload="#{equipeAlunoController.init(projetoController.selecionado)}">
+
+	<!-- Painel de consulta -->
+	<p:panel id="consulta" visible="#{!equipeAlunoController.editando}">
+		<p:growl></p:growl>
+		
+		<h:form>
+			<p:commandButton value="Incluir" icon="pi pi-plus"   action="#{equipeAlunoController.incluir}" update="consulta edicao"> </p:commandButton>
+			<p:commandButton value="Alterar" icon="pi pi-pencil" action="#{equipeAlunoController.alterar}" update="consulta edicao" disabled="#{equipeAlunoController.isSelected()}"></p:commandButton>
+			<p:commandButton value="Excluir" icon="pi pi-trash"  action="#{equipeAlunoController.excluir}" update="consulta"        disabled="#{equipeAlunoController.isSelected()}" onclick="return confirm('Você realmente desejá exlcuir o registro ?')"></p:commandButton>
+			<p:dataTable 
+			    var="o" 
+			    value="#{equipeAlunoController.lista}"
+				emptyMessage="Nada para mostrar!" 
+				selectionMode="single"
+				selection="#{equipeAlunoController.selecionado}" 
+				rowKey="#{o.id}" 
+				rows="10"
+				paginator="true"
+				paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+				rowsPerPageTemplate="5,10,15"
+				currentPageReportTemplate="Listando de {startRecord} até {endRecord} de {totalRecords}"
+			>
+				<p:ajax event="rowSelect" update="consulta" />
+				<p:ajax event="rowUnselect" update="consulta" />
+				
+				<p:column styleClass="centeredColumn" headerText="Código" sortBy="#{o.id}" filterBy="#{o.id}" filterMatchMode="exact" width="100">
+					<p:outputLabel value="#{o.id}"></p:outputLabel>
+				</p:column>
+								
+				<p:column styleClass="centeredColumn" headerText="Projeto" sortBy="#{o.projeto.nome}" filterBy="#{o.projeto.nome}" filterMatchMode="contains">
+					<p:outputLabel value="#{o.projeto.nome}"></p:outputLabel>
+				</p:column>
+												
+				<p:column styleClass="centeredColumn" headerText="Orientador" sortBy="#{o.orientador.nome}" filterBy="#{o.orientador.nome}" filterMatchMode="contains">
+					<p:outputLabel value="#{o.orientador.nome}"></p:outputLabel>
+				</p:column>
+				
+				<p:column styleClass="centeredColumn" headerText="Aluno" sortBy="#{o.aluno.nome}" filterBy="#{o.aluno.nome}" filterMatchMode="contains">
+					<p:outputLabel value="#{o.aluno.nome}"></p:outputLabel>
+				</p:column>
+				
+				<p:column styleClass="centeredColumn" headerText="Horas Semanais" sortBy="#{o.horasSemanais}" filterBy="#{o.horasSemanais}" filterMatchMode="contains">
+					<p:outputLabel value="#{o.horasSemanais}"></p:outputLabel>
+				</p:column>
+								
+				<p:column styleClass="centeredColumn" headerText="Horas Realizadas" sortBy="#{o.horasRealizadas}" filterBy="#{o.horasSemanais}" filterMatchMode="contains">
+					<p:outputLabel value="#{o.horasRealizadas}"></p:outputLabel>
+				</p:column>
+				
+			</p:dataTable>
+		</h:form>
+	</p:panel>
+
+	<!-- Painel de edição -->
+	<p:panel id="edicao" visible="#{equipeAlunoController.editando}">
+		<p:growl></p:growl>
+	
+		<h:form id="equipealuno">
+			<p:panelGrid columns="2">
+				<p:outputLabel value="Código"></p:outputLabel>
+				<p:inputNumber decimalPlaces="0" value="#{equipeAlunoController.selecionado.id}" disabled="true"></p:inputNumber>
+				
+				<p:outputLabel for="dataEntrada" value="Data de entrada:" />
+        		<p:datePicker  id="dataEntrada" value="#{equipeAlunoController.selecionado.dataEntrada}" autocomplete="off"/>
+        		
+        		<p:outputLabel for="dataSaida" value="Data de saída:" rendered="#{!equipeAlunoController.isNewInstance()}"/>
+        		<p:datePicker id="dataSaida" value="#{equipeAlunoController.selecionado.dataSaida}" autocomplete="off" rendered="#{!equipeAlunoController.isNewInstance()}"/>
+       
+	            <p:outputLabel value="Valor da Bolsa"></p:outputLabel>
+				<p:inputNumber decimalPlaces="2" value="#{equipeAlunoController.selecionado.valorBolsa}" placeholder="Valor da Bolsa" minValue="0" maxValue="10000"></p:inputNumber>
+				
+				<p:outputLabel value="Orientador" />
+	            <p:selectOneMenu converter="entityconverter" value="#{equipeAlunoController.selecionado.orientador}" style="width:150px">
+	                <f:selectItems value="#{equipeAlunoController.getSelect('Table', 'Professor')}" />
+	            </p:selectOneMenu>
+	            	
+				<p:outputLabel value="Aluno" />
+	            <p:selectOneMenu converter="entityconverter" value="#{equipeAlunoController.selecionado.aluno}" style="width:150px">
+	                <f:selectItems value="#{equipeAlunoController.getSelect('Table', 'Aluno')}" />
+	            </p:selectOneMenu>
+	            				
+				<p:outputLabel value="Tipo da Bolsa"></p:outputLabel>
+				<p:inputText value="#{equipeAlunoController.selecionado.tipoBolsa}" placeholder="Paidex, Pibic..." maxlength="30"></p:inputText>
+				
+	            <p:outputLabel value="Tipo do Aluno" />
+	            <p:selectOneButton value="#{equipeAlunoController.selecionado.bolsaOuVoluntario}">
+					<f:selectItem itemLabel="Bolsista" itemValue="B"></f:selectItem>
+					<f:selectItem itemLabel="Voluntário" itemValue="V"></f:selectItem>
+				</p:selectOneButton>
+	            
+           		<p:outputLabel value="Horarios do Aluno" />
+           		<p:panel id="horarios">
+					<p:dataTable 
+						var="h"
+						value="#{equipeAlunoController.selecionado.horariosAluno}" 
+						emptyMessage="Nenhum horario cadastrado!" 
+					>
+						<p:column headerText="Dia da Semana">
+							<p:outputLabel value="#{h.diaDaSemana}"></p:outputLabel>
+						</p:column>
+						<p:column headerText="Turno">
+							<p:outputLabel value="#{h.turno}"></p:outputLabel>
+						</p:column>
+						<p:column headerText="Horas do Turno">
+							<p:outputLabel value="#{h.horasNoTurno}"></p:outputLabel>
+						</p:column>
+						<p:column headerText="Observações">
+							<p:outputLabel value="#{h.horarios}"></p:outputLabel>
+						</p:column>
+						
+					</p:dataTable>
+				</p:panel>
+            </p:panelGrid>
+
+			<p:commandButton value="Adicionar Horario"        action="#{equipeAlunoController.novoHorario}" icon="pi pi-clock"        update="horarioaluno"    immediate="true" oncomplete="PF('cadastrarAluno').show();"></p:commandButton>
+			<p:commandButton value="Remover Aluno do Projeto" action="#{equipeAlunoController.remover}"     icon="pi pi-times"        update="consulta edicao" rendered="#{!equipeAlunoController.isNewInstance()}"></p:commandButton>
+			<p:commandButton value="Salvar"                   action="#{equipeAlunoController.salvar}"      icon="pi pi-save"         update="consulta edicao"></p:commandButton>
+			<p:commandButton value="Cancelar"                 action="#{equipeAlunoController.cancelar}"    icon="pi pi-times-circle" update="consulta edicao" immediate="true"></p:commandButton>
+		</h:form>
+	</p:panel>
+	
+	<p:dialog header="Horário de Trabalho" widgetVar="cadastrarAluno" height="300" modal="true">
+       <p:panel id="horarioaluno">
+	       <h:form>
+	       <p:growl></p:growl>
+	        
+	            <p:panelGrid columns="2">
+	                <p:outputLabel value="Código"></p:outputLabel>
+	                <p:inputNumber decimalPlaces="0" value="#{equipeAlunoController.horario.id}" disabled="true"></p:inputNumber>
+	                
+	     			<p:outputLabel value="Dia da semana" />  
+	         	    <p:selectOneMenu converter="entityconverter" value="#{equipeAlunoController.horario.diaDaSemana}" style="width:150px">
+		                <f:selectItems value="#{equipeAlunoController.getSelect('Enum', 'DiaDaSemana')}" var="obj" itemValue="#{obj.toString()}" />
+		            </p:selectOneMenu>
+	                
+	     			<p:outputLabel value="Turno" />  
+	            	<p:selectOneMenu converter="entityconverter" value="#{equipeAlunoController.horario.turno}" style="width:150px">
+		                <f:selectItems value="#{equipeAlunoController.getSelect('Enum', 'Turno')}" var="obj" itemValue="#{obj.toString()}" />
+		            </p:selectOneMenu>
+	       
+	                <p:outputLabel value="Horas no Turno"></p:outputLabel>
+	                <p:inputNumber maxValue="6" decimalPlaces="0" value="#{equipeAlunoController.horario.horasNoTurno}" thousandSeparator=""></p:inputNumber>
+	                            
+	                <p:outputLabel value="Observações"></p:outputLabel>
+	                <p:inputText value="#{equipeAlunoController.horario.horarios}"></p:inputText>
+	             </p:panelGrid>
+				 <br/>
+				 <p:commandButton value="Salvar" action="#{equipeAlunoController.salvarHorario}" update="equipealuno:horarios" oncomplete="PF('cadastrarAluno').hide();" icon="pi pi-save"></p:commandButton>
+	 			 <p:commandButton value="Cancelar" immediate="true"                              update="equipealuno:horarios" oncomplete="PF('cadastrarAluno').hide();" icon="pi pi-times-circle"></p:commandButton>
+	 		</h:form>
+		</p:panel>
+	</p:dialog>
+	
+</h:body>
+</html>

@@ -1,0 +1,29 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+
+	<title>Confirmar Código</title>
+	
+</h:head>
+<h:body>
+	<h:form>
+		<p:growl></p:growl>
+		<p:panelGrid columns="4"
+			style="position: absolute; left: 50%; top: 50%; margin-left:-150px; margin-top:-85px;">
+			<f:facet name="header">
+				<p:outputLabel value="Confirmar Código" />
+			</f:facet>
+			<p:outputLabel value="Código" for="codigo" />
+			<p:inputText id="codigo" size="6" maxlength="6"
+				value="#{loginController.codigo}" required="true" />
+			<f:facet name="footer">
+				<p:commandButton value="Confirmar" action="#{loginController.verificarCodigo}"
+					ajax="false" />
+			</f:facet>
+		</p:panelGrid>
+	</h:form>
+</h:body>
+</html>

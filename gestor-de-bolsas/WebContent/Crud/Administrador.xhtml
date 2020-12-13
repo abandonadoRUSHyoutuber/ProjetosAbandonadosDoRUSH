@@ -1,0 +1,107 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<style>
+		td.centeredColumn {
+		    text-align: center;
+		}
+		body .ui-panel .ui-panel-content {
+			border: none !important;
+		}
+	</style>
+</h:head>
+
+<h:body onload="#{entityController.init('Administrador')}">
+
+	<!-- Painel de consulta -->
+	<p:panel id="consulta" visible="#{!entityController.editando}">
+		<p:growl></p:growl>
+		
+		<h:form>
+			<p:commandButton value="Incluir" icon="pi pi-plus"   action="#{entityController.incluir}" update="consulta edicao"> </p:commandButton>
+			<p:commandButton value="Alterar" icon="pi pi-pencil" action="#{entityController.alterar}" update="consulta edicao" disabled="#{entityController.isSelected()}"></p:commandButton>
+			<p:commandButton value="Excluir" icon="pi pi-trash"  action="#{entityController.excluir}" update="consulta"        disabled="#{entityController.isSelected()}" onclick="return confirm('Você realmente desejá exlcuir o registro ?')"></p:commandButton>
+			<p:dataTable 
+			    var="o" 
+			    value="#{entityController.lista}"
+				emptyMessage="Nada para mostrar!" 
+				selectionMode="single"
+				selection="#{entityController.selecionado}" 
+				rowKey="#{o.id}" 
+				rows="10"
+				paginator="true"
+				paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+				rowsPerPageTemplate="5,10,15"
+				currentPageReportTemplate="Listando de {startRecord} até {endRecord} de {totalRecords}"
+			>
+				<p:ajax event="rowSelect" update="consulta" />
+				<p:ajax event="rowUnselect" update="consulta" />
+				
+				<p:column styleClass="centeredColumn" headerText="Código" sortBy="#{o.id}" filterBy="#{o.id}" filterMatchMode="exact" width="100">
+					<p:outputLabel value="#{o.id}"></p:outputLabel>
+				</p:column>
+
+				<p:column styleClass="centeredColumn" headerText="Nome" sortBy="#{o.nome}" filterBy="#{o.nome}" filterMatchMode="contains">
+					<p:outputLabel value="#{o.nome}"></p:outputLabel>
+				</p:column>
+								
+				<p:column styleClass="centeredColumn" headerText="RG" sortBy="#{o.rg}" filterBy="#{o.rg}" filterMatchMode="contains" width="125">
+					<p:outputLabel value="#{o.rg}"></p:outputLabel>
+				</p:column>
+							
+				<p:column styleClass="centeredColumn" headerText="CPF" sortBy="#{o.cpf}" filterBy="#{o.cpf}" filterMatchMode="contains" width="150">
+					<p:outputLabel value="#{o.cpf}"></p:outputLabel>
+				</p:column>
+							
+				<p:column styleClass="centeredColumn" headerText="Matrícula" sortBy="#{o.matricula}" filterBy="#{o.matricula}" filterMatchMode="contains" width="125">
+					<p:outputLabel value="#{o.matricula}"></p:outputLabel>
+				</p:column>
+				
+			</p:dataTable>
+		</h:form>
+	</p:panel>
+
+	<!-- Painel de edição -->
+	<p:panel id="edicao" visible="#{entityController.editando}">
+		<p:growl></p:growl>
+	
+		<h:form>
+			<p:panelGrid columns="2">
+				<p:outputLabel value="Código"></p:outputLabel>
+				<p:inputNumber decimalPlaces="0" value="#{entityController.selecionado.id}" disabled="true" placeholder="Código do administrador"></p:inputNumber>
+				
+				<p:outputLabel value="Matrícula"></p:outputLabel>
+				<p:inputText value="#{entityController.selecionado.matricula}" placeholder="Número da matrícula" maxlength="10"></p:inputText>
+				
+				<p:outputLabel value="Nome"></p:outputLabel>
+				<p:inputText value="#{entityController.selecionado.nome}" placeholder="Nome do administrador" maxlength="60"></p:inputText>
+
+				<p:outputLabel value="CPF"></p:outputLabel>
+				<p:inputMask decimalPlaces="0" value="#{entityController.selecionado.cpf}" placeholder="CPF" mask="999.999.999-99"></p:inputMask>
+				
+				<p:outputLabel value="RG"></p:outputLabel>
+				<p:inputNumber thousandSeparator="" decimalPlaces="0" value="#{entityController.selecionado.rg}" placeholder="RG"></p:inputNumber>
+				
+				<p:outputLabel value="Email"></p:outputLabel>
+				<p:inputText value="#{entityController.selecionado.email}" placeholder="Email"></p:inputText>
+				
+				<p:outputLabel value="Senha" rendered="#{entityController.isNewInstance()}"></p:outputLabel>
+				<p:password value="#{entityController.selecionado.senha}" placeholder="Senha" rendered="#{entityController.isNewInstance()}"></p:password>
+				
+				<p:outputLabel value="Celular"></p:outputLabel>
+				<p:inputMask value="#{entityController.selecionado.celular}" placeholder="Celular" mask="(99) 9 99999999"></p:inputMask>
+				
+				<p:outputLabel value="Observações"></p:outputLabel>
+				<p:inputTextarea value="#{entityController.selecionado.observacoes}" placeholder="Observações" maxlength="1000"></p:inputTextarea>
+			</p:panelGrid>
+
+			<p:commandButton value="Salvar"   action="#{entityController.salvar}"   icon="pi pi-save"         update="consulta edicao"></p:commandButton>
+			<p:commandButton value="Cancelar" action="#{entityController.cancelar}" icon="pi pi-times-circle" update="consulta edicao" immediate="true"></p:commandButton>
+		</h:form>
+	</p:panel>
+
+</h:body>
+</html>

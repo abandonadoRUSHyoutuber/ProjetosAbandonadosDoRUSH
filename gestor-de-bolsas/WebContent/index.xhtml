@@ -1,0 +1,65 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core" xmlns:p="http://primefaces.org/ui">
+	
+	<style type="text/css">
+		.ui-layout-north {
+			z-index:20 !important;
+			overflow:visible !important;
+		}
+		.ui-layout-north .ui-layout-unit-content {
+			overflow:visible !important;
+		}		
+		.ui-menu .ui-menu-parent .ui-menu-child {
+           width: 200px !important;
+        }
+        
+        .menuitem-hidden {
+		    display: none !important;  
+		}
+		.ui-panel {
+			border: none !important;
+			border-width: 0px;
+		}
+		body .ui-panel .ui-panel-content {
+			border: none !important;
+			border-width: 0px;
+		}
+	</style>
+	
+	<h:head></h:head>
+	<h:body >
+		<p:layout fullPage="true">
+			<p:layoutUnit position="north" resizable="false">
+				<h:form>
+				 	<p:menubar>
+				 		<p:menuitem icon="pi pi-home" value="Home" url="index.xhtml" />
+				 		<p:submenu icon="fa fa-gears" label="Cadastros" rendered="#{loginController.tipoUsuario != 'Aluno'}">
+							<p:menuitem icon="fa fa-briefcase"      value="Projetos"                                                                         url="Crud/Projeto.xhtml"            target="centro"/>
+							<p:menuitem icon="fa fa-user-secret"    value="Administradores"     rendered="#{loginController.tipoUsuario == 'Administrador'}" url="Crud/Administrador.xhtml"      target="centro"/>
+							<p:menuitem icon="fa fa-user"           value="Alunos"                                                                           url="Crud/Aluno.xhtml"              target="centro"/>
+							<p:menuitem icon="fa fa-user-md"        value="Professores"         rendered="#{loginController.tipoUsuario == 'Administrador'}" url="Crud/Professor.xhtml"          target="centro"/>
+							<p:menuitem icon="fa fa-university"     value="Unidades"            rendered="#{loginController.tipoUsuario == 'Administrador'}" url="Crud/Unidade.xhtml"            target="centro"/>
+							<p:menuitem icon="fa fa-book"           value="Cursos"              rendered="#{loginController.tipoUsuario == 'Administrador'}" url="Crud/Curso.xhtml"              target="centro"/>
+							<p:menuitem icon="fa fa-file-text-o"    value="Atividades Realizadas"                                                            url="Crud/AtividadeRealizada.xhtml" target="centro"/>
+						</p:submenu>
+						<p:menuitem icon="fa fa-briefcase" value="Meus Projetos" url="Crud/AlunoProjetos.xhtml" ajax="false" rendered="#{loginController.tipoUsuario == 'Aluno'}" target="centro" />
+						<p:submenu icon="fa fa-file-text" label="Relatórios">
+							<p:menuitem value="Todos os Projetos"     target="_blank" action="#{projetoFiltro.gerar(loginController.usuarioLogado.id, loginController.tipoUsuario == 'Professor', false)}" icon="fa fa-briefcase"      ajax="false" rendered="#{loginController.tipoUsuario == 'Administrador'}"></p:menuitem>
+							<p:menuitem value="Todos os Professores"  target="_blank" action="#{relatoriosController.relProfessores}"                                                                      icon="fa fa-user-md"        ajax="false" rendered="#{loginController.tipoUsuario == 'Administrador'}"></p:menuitem>
+							<p:menuitem value="Todos os Alunos"       target="_blank" action="#{relatoriosController.relAlunos}"                                                                           icon="fa fa-user"           ajax="false" rendered="#{loginController.tipoUsuario != 'Aluno'}"        ></p:menuitem>
+							<p:menuitem value="Meus Projetos"         target="_blank" action="#{projetoFiltro.gerar(loginController.usuarioLogado.id, loginController.tipoUsuario == 'Professor', true)}"  icon="fa fa-briefcase"      ajax="false" rendered="#{loginController.tipoUsuario == 'Professor'}"    ></p:menuitem>
+							<p:menuitem value="Horários do Aluno"     target="centro" url="FiltrosRel/HorarioAluno.xhtml"                                                                                  icon="fa fa-clock-o"        ajax="false" rendered="#{loginController.tipoUsuario != 'Aluno'}"        ></p:menuitem>
+							<p:menuitem value="Projetos do Professor" target="centro" url="FiltrosRel/Projeto.xhtml"                                                                                       icon="fa fa-briefcase"      ajax="false" rendered="#{loginController.tipoUsuario == 'Administrador'}"></p:menuitem>
+							<p:menuitem value="Atividades do Aluno"   target="centro" url="FiltrosRel/Atividade.xhtml"                                                                                     icon="fa fa-file-text-o"    ajax="false" rendered="#{loginController.tipoUsuario != 'Aluno'}"        ></p:menuitem>
+							<p:menuitem value="Minhas Atividades"     target="centro" url="FiltrosRel/Atividade.xhtml"                                                                                     icon="fa fa-file-text-o"    ajax="false" rendered="#{loginController.tipoUsuario == 'Aluno'}"        ></p:menuitem>
+						</p:submenu>
+				 		<p:menuitem icon="fa fa-lock"  value="Alterar Senha" url="Crud/AlterarSenha.xhtml" target="centro" />
+						<p:menuitem icon="pi pi-times" value="Sair" action="#{loginController.sair}" ajax="false" />
+					</p:menubar>
+			 	</h:form>
+			</p:layoutUnit>
+			<p:layoutUnit position="center" style="border-width: 0px !important; border: none !important; background-color: #323232; border-color: #323232 !important;"> 
+				<iframe name="centro" id="centro" style="width: 100%; height: 100%; background-color: #323232; border-width: 0px; border: none !important; border-color: #323232 !important;" src="BoasVindas.xhtml" />
+			</p:layoutUnit>
+		</p:layout>
+	</h:body>
+</html>

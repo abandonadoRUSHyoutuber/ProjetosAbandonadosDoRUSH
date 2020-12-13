@@ -1,0 +1,100 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<style>
+		td.centeredColumn {
+		    text-align: center;
+		}
+		body .ui-panel .ui-panel-content {
+			border: none !important;
+		}
+	</style>
+</h:head>
+
+<h:body onload="#{equipeProfessorController.init(projetoController.selecionado)}">
+
+	<!-- Painel de consulta -->
+	<p:panel id="consulta" visible="#{!equipeProfessorController.editando}">
+		<p:growl></p:growl>
+		
+		<h:form>
+			<p:commandButton value="Incluir" icon="pi pi-plus"   action="#{equipeProfessorController.incluir}" update="consulta edicao"> </p:commandButton>
+			<p:commandButton value="Alterar" icon="pi pi-pencil" action="#{equipeProfessorController.alterar}" update="consulta edicao" disabled="#{equipeProfessorController.isSelected()}"></p:commandButton>
+			<p:commandButton value="Excluir" icon="pi pi-trash"  action="#{equipeProfessorController.excluir}" update="consulta"        disabled="#{equipeProfessorController.isSelected()}" onclick="return confirm('Você realmente desejá exlcuir o registro ?')"></p:commandButton>
+			<p:dataTable 
+			    var="o" 
+			    value="#{equipeProfessorController.lista}"
+				emptyMessage="Nada para mostrar!" 
+				selectionMode="single"
+				selection="#{equipeProfessorController.selecionado}" 
+				rowKey="#{o.id}" 
+				rows="10"
+				paginator="true"
+				paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+				rowsPerPageTemplate="5,10,15"
+				currentPageReportTemplate="Listando de {startRecord} até {endRecord} de {totalRecords}"
+			>
+				<p:ajax event="rowSelect" update="consulta" />
+				<p:ajax event="rowUnselect" update="consulta" />
+				
+				<p:column styleClass="centeredColumn" headerText="Código" sortBy="#{o.id}" filterBy="#{o.id}" filterMatchMode="exact" width="100">
+					<p:outputLabel value="#{o.id}"></p:outputLabel>
+				</p:column>
+								
+				<p:column styleClass="centeredColumn" headerText="Projeto" sortBy="#{o.projeto.nome}" filterBy="#{o.projeto.nome}" filterMatchMode="contains">
+					<p:outputLabel value="#{o.projeto.nome}"></p:outputLabel>
+				</p:column>
+				
+				<p:column styleClass="centeredColumn" headerText="Professor" sortBy="#{o.professor.nome}" filterBy="#{o.professor.nome}" filterMatchMode="contains">
+					<p:outputLabel value="#{o.professor.nome}"></p:outputLabel>
+				</p:column>
+								
+				<p:column styleClass="centeredColumn" headerText="Funcao" sortBy="#{o.funcao}" filterBy="#{o.funcao}" filterMatchMode="contains">
+					<p:outputLabel value="#{o.funcao}"></p:outputLabel>
+				</p:column>
+				
+			</p:dataTable>
+		</h:form>
+	</p:panel>
+
+	<!-- Painel de edição -->
+	<p:panel id="edicao" visible="#{equipeProfessorController.editando}">
+		<p:growl></p:growl>
+	
+		<h:form>
+			<p:panelGrid columns="2">
+				<p:outputLabel value="Código"></p:outputLabel>
+				<p:inputNumber decimalPlaces="0" value="#{equipeProfessorController.selecionado.id}" disabled="true"></p:inputNumber>
+				
+				<p:outputLabel for="dataEntrada" value="Data de entrada:" />
+        		<p:datePicker id="dataEntrada" value="#{equipeProfessorController.selecionado.dataEntrada}" autocomplete="off"/>
+        		
+        		<p:outputLabel for="dataSaida" value="Data de saída:" rendered="#{!equipeProfessorController.isNewInstance()}"/>
+        		<p:datePicker id="dataSaida" value="#{equipeProfessorController.selecionado.dataSaida}" autocomplete="off" rendered="#{!equipeProfessorController.isNewInstance()}"/>
+        
+				<p:outputLabel value="Função"></p:outputLabel>
+				<p:selectOneMenu converter="entityconverter" value="#{equipeProfessorController.selecionado.funcao}" style="width:150px">
+	                <f:selectItems value="#{equipeProfessorController.getSelect('Enum', 'Funcao')}" var="obj" itemValue="#{obj.toString()}" />
+	            </p:selectOneMenu>
+	            
+	            <p:outputLabel value="Horas semanais"></p:outputLabel>
+				<p:inputNumber decimalPlaces="0" value="#{equipeProfessorController.selecionado.horasSemanais}" maxValue="168" placeholder="Horas semanais"></p:inputNumber>
+				
+				<p:outputLabel value="Professor" />
+	            <p:selectOneMenu converter="entityconverter" value="#{equipeProfessorController.selecionado.professor}" style="width:150px">
+	                <f:selectItems value="#{equipeProfessorController.getSelect('Table', 'Professor')}" />
+	            </p:selectOneMenu>
+	            
+            </p:panelGrid>
+			
+			<p:commandButton value="Remover Professor do Projeto" action="#{equipeProfessorController.remover}"  icon="pi pi-times"        update="consulta edicao"  rendered="#{!equipeProfessorController.isNewInstance()}"></p:commandButton>
+			<p:commandButton value="Salvar"                       action="#{equipeProfessorController.salvar}"   icon="pi pi-save"         update="consulta edicao"></p:commandButton>
+			<p:commandButton value="Cancelar"                     action="#{equipeProfessorController.cancelar}" icon="pi pi-times-circle" update="consulta edicao" immediate="true"></p:commandButton>
+		</h:form>
+	</p:panel>
+
+</h:body>
+</html>

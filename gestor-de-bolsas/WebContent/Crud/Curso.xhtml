@@ -1,0 +1,84 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<style>
+		td.centeredColumn {
+		    text-align: center;
+		}
+		body .ui-panel .ui-panel-content {
+			border: none !important;
+		}
+	</style>
+</h:head>
+
+<h:body onload="#{entityController.init('Curso')}">
+
+	<!-- Painel de consulta -->
+	<p:panel id="consulta" visible="#{!entityController.editando}">
+		<p:growl></p:growl>
+		
+		<h:form>
+			<p:commandButton value="Incluir" icon="pi pi-plus"   action="#{entityController.incluir}" update="consulta edicao"> </p:commandButton>
+			<p:commandButton value="Alterar" icon="pi pi-pencil" action="#{entityController.alterar}" update="consulta edicao" disabled="#{entityController.isSelected()}"></p:commandButton>
+			<p:commandButton value="Excluir" icon="pi pi-trash"  action="#{entityController.excluir}" update="consulta"        disabled="#{entityController.isSelected()}" onclick="return confirm('Você realmente desejá exlcuir o registro ?')"></p:commandButton>
+			<p:dataTable 
+			    var="o" 
+			    value="#{entityController.lista}"
+				emptyMessage="Nada para mostrar!" 
+				selectionMode="single"
+				selection="#{entityController.selecionado}" 
+				rowKey="#{o.id}" 
+				rows="10"
+				paginator="true"
+				paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+				rowsPerPageTemplate="5,10,15"
+				currentPageReportTemplate="Listando de {startRecord} até {endRecord} de {totalRecords}"
+			>
+				<p:ajax event="rowSelect" update="consulta" />
+				<p:ajax event="rowUnselect" update="consulta" />
+				
+				<p:column styleClass="centeredColumn" headerText="Código" sortBy="#{o.id}" filterBy="#{o.id}" filterMatchMode="exact" width="100">
+					<p:outputLabel value="#{o.id}"></p:outputLabel>
+				</p:column>
+				
+				<p:column styleClass="centeredColumn" headerText="Nome" sortBy="#{o.nome}" filterBy="#{o.nome}" filterMatchMode="contains">
+					<p:outputLabel value="#{o.nome}"></p:outputLabel>
+				</p:column>
+				
+				<p:column styleClass="centeredColumn" headerText="Unidade" sortBy="#{o.unidade}" filterBy="#{o.unidade}" filterMatchMode="contains">
+					<p:outputLabel value="#{o.unidade}"></p:outputLabel>
+				</p:column>
+			
+			</p:dataTable>
+		</h:form>
+	</p:panel>
+
+	<!-- Painel de edição -->
+	<p:panel id="edicao" visible="#{entityController.editando}">
+		<p:growl></p:growl>
+	
+		<h:form>
+			<p:panelGrid columns="2">
+				<p:outputLabel value="Código"></p:outputLabel>
+				<p:inputNumber decimalPlaces="0" value="#{entityController.selecionado.id}" disabled="true" placeholder="Código do curso"></p:inputNumber>
+
+				<p:outputLabel value="Nome"></p:outputLabel>
+				<p:inputText value="#{entityController.selecionado.nome}" placeholder="Nome do curso" maxlength="60"></p:inputText>
+
+	            <p:outputLabel value="Unidade:" />
+	            <p:selectOneMenu converter="entityconverter" value="#{entityController.selecionado.unidade}" style="width:150px">
+	                <f:selectItems value="#{entityController.getSelect('Table', 'Unidade')}" />
+	            </p:selectOneMenu>
+            
+			</p:panelGrid>
+
+			<p:commandButton value="Salvar"   action="#{entityController.salvar}"   icon="pi pi-save"         update="consulta edicao"></p:commandButton>
+			<p:commandButton value="Cancelar" action="#{entityController.cancelar}" icon="pi pi-times-circle" update="consulta edicao" immediate="true"></p:commandButton>
+		</h:form>
+	</p:panel>
+
+</h:body>
+</html>

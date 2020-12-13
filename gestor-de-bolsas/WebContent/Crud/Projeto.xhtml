@@ -1,0 +1,93 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<style>
+		td.centeredColumn {
+		    text-align: center;
+		}
+		body .ui-panel .ui-panel-content {
+			border: none !important;
+		}
+	</style>
+</h:head>
+
+<h:body onload="#{projetoController.init('Projeto')}">
+
+	<!-- Painel de consulta -->
+	<p:panel id="consulta" visible="#{!projetoController.editando}">
+		<p:growl></p:growl>
+		
+		<h:form>
+			<p:commandButton value="Incluir" icon="pi pi-plus"   action="#{projetoController.incluir}" update="consulta edicao"> </p:commandButton>
+			<p:commandButton value="Alterar" icon="pi pi-pencil" action="#{projetoController.alterar}" update="consulta edicao" disabled="#{projetoController.isSelected()}"></p:commandButton>
+			<p:commandButton value="Excluir" icon="pi pi-trash"  action="#{projetoController.excluir}" update="consulta"        disabled="#{projetoController.isSelected()}" onclick="return confirm('Você realmente desejá exlcuir o registro ?')"></p:commandButton>
+			<p:dataTable 
+			    var="o" 
+			    value="#{projetoController.lista}"
+				emptyMessage="Nada para mostrar!" 
+				selectionMode="single"
+				selection="#{projetoController.selecionado}" 
+				rowKey="#{o.id}" 
+				rows="10"
+				paginator="true"
+				paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+				rowsPerPageTemplate="5,10,15"
+				currentPageReportTemplate="Listando de {startRecord} até {endRecord} de {totalRecords}"
+			>
+				<p:ajax event="rowSelect" update="consulta" />
+				<p:ajax event="rowUnselect" update="consulta" />
+				
+				<p:column styleClass="centeredColumn" headerText="Código" sortBy="#{o.id}" filterBy="#{o.id}" filterMatchMode="exact" width="100">
+					<p:outputLabel value="#{o.id}"></p:outputLabel>
+				</p:column>
+				
+				<p:column styleClass="centeredColumn" headerText="Nome" sortBy="#{o.nome}" filterBy="#{o.nome}" filterMatchMode="contains">
+					<p:outputLabel value="#{o.nome}"></p:outputLabel>
+				</p:column>
+				
+				<p:column styleClass="centeredColumn" headerText="Alunos"  width="90">
+		              <p:commandButton icon="fa fa-user" immediate="true" ajax="true" action="#{projetoController.abrirPopup('EquipeAluno.xhtml', 900, 600, true, o)}" > </p:commandButton>
+				</p:column>
+				
+				<p:column styleClass="centeredColumn" headerText="Professores"  width="90">
+		              <p:commandButton icon="fa fa-user-md" immediate="true" ajax="true" action="#{projetoController.abrirPopup('EquipeProfessor.xhtml', 900, 600, true, o)}" > </p:commandButton>
+				</p:column>
+				
+			</p:dataTable>
+		</h:form>
+	</p:panel>
+
+	<!-- Painel de edição -->
+	<p:panel id="edicao" visible="#{projetoController.editando}">
+		<p:growl></p:growl>
+	
+		<h:form>
+			<p:panelGrid columns="2">
+				<p:outputLabel value="Código"></p:outputLabel>
+				<p:inputNumber decimalPlaces="0" value="#{projetoController.selecionado.id}" disabled="true" placeholder="Código do projeto"></p:inputNumber>
+				
+				<p:outputLabel value="Nome"></p:outputLabel>
+				<p:inputText value="#{projetoController.selecionado.nome}" placeholder="Nome do projeto" maxlength="60"></p:inputText>
+				
+				<p:outputLabel value="Unidade:" />
+	            <p:selectOneMenu converter="entityconverter" value="#{projetoController.selecionado.unidade}" style="width:150px">
+	                <f:selectItems value="#{projetoController.getSelect('Table', 'Unidade')}" />
+	            </p:selectOneMenu>
+	            
+	            <p:outputLabel value="Responsável" />
+	            <p:selectOneMenu converter="entityconverter" value="#{projetoController.selecionado.professor}" style="width:150px">
+	                <f:selectItems value="#{projetoController.getSelect('Table', 'Professor')}" />
+	            </p:selectOneMenu>
+	            
+			</p:panelGrid>
+
+			<p:commandButton value="Salvar"   action="#{projetoController.salvar}"   icon="pi pi-save"         update="consulta edicao"></p:commandButton>
+			<p:commandButton value="Cancelar" action="#{projetoController.cancelar}" icon="pi pi-times-circle" update="consulta edicao" immediate="true"></p:commandButton>
+		</h:form>
+	</p:panel>
+
+</h:body>
+</html>

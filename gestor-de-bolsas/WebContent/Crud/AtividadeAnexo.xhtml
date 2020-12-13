@@ -1,0 +1,31 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+</h:head>
+
+<h:body>
+	<p:dialog header="Arquivo" widgetVar="anexos" id="anexos" modal="true">
+		<h:form id="formEditAnexo" enctype="multipart/form-data">
+		
+	        <p:outputLabel for="descricao" value="Descrição:" />
+			<p:spacer width="3" height="0" />
+			<p:inputText id="descricao" required="true" size="100" value="#{atividadeRealizadaController.anexoSelecionado.descricao}"/>
+			<br/>
+			<p:spacer width="00" height="25" />
+			
+			<p:outputLabel for="anexararq" value="Anexo:" />
+			<p:spacer width="25" height="0" />
+			<p:fileUpload id="anexararq" value="#{atividadeRealizadaController.file}" mode="simple" skinSimple="true" required="true"/>
+			<br/>
+			
+			<p:spacer width="00" height="30" />
+			<p:commandButton value="Salvar" icon="pi pi-save" ajax="false" action="#{atividadeRealizadaController.salvarAnexo}" oncomplete="PF('anexos').hide();" />
+
+			<p:commandButton value="Cancelar" icon="pi pi-times-circle" immediate="true" oncomplete="PF('anexos').hide();" />
+		</h:form>
+	</p:dialog>
+</h:body>
+</html>

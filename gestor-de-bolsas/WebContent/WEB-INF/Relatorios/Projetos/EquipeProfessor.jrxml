@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.12.2.final using JasperReports Library version 6.12.2-75c5e90a222ab406e416cbf590a5397028a52de3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="EquipeProfessor" pageWidth="595" pageHeight="842" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="afe6c035-779e-44c2-92f4-9777aa77f6d4">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="gestordebolsas"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="projetoId" class="java.lang.Long"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT pessoa.matricula,
+	pessoa.nome,
+	professor.titulacao,
+	equipeprofessor.funcao,
+	equipeprofessor.horassemanais,
+	equipeprojeto.dataentrada,
+	equipeprojeto.datasaida
+FROM equipeprofessor
+	INNER JOIN equipeprojeto ON 
+	 equipeprofessor.id = equipeprojeto.id 
+	INNER JOIN professor ON 
+	 equipeprofessor.professor_id = professor.id 
+	INNER JOIN pessoa ON 
+	 professor.id = pessoa.id
+	 	 WHERE equipeprojeto.projeto_id =  $P{projetoId}]]>
+	</queryString>
+	<field name="matricula" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="matricula"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
+	</field>
+	<field name="nome" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nome"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
+	</field>
+	<field name="titulacao" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="titulacao"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="professor"/>
+	</field>
+	<field name="funcao" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="funcao"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="equipeprofessor"/>
+	</field>
+	<field name="horassemanais" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="horassemanais"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="equipeprofessor"/>
+	</field>
+	<field name="dataentrada" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="dataentrada"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="equipeprojeto"/>
+	</field>
+	<field name="datasaida" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="datasaida"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="equipeprojeto"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="41" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="22" width="100" height="19" uuid="820187c3-348c-452f-8460-10983b85121e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b7f426de-465d-45b8-ae14-b8ddee4107e9"/>
+				</reportElement>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Matricula]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="22" width="140" height="19" uuid="ac81726f-8b00-48ca-b2cf-fe1a79779e38">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="50c3490b-005b-4f74-bc6d-b1eb1a454fd6"/>
+				</reportElement>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nome]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="240" y="22" width="100" height="19" uuid="af1ce9ed-fd91-4b00-805a-6c95f7e03054">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3eeb6841-c2ee-4253-9dc5-87bbe3c5d584"/>
+				</reportElement>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Função]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="2" width="348" height="19" uuid="9119a7d9-beb8-4ccb-8b87-ecf7c558866f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b7f426de-465d-45b8-ae14-b8ddee4107e9"/>
+				</reportElement>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Professores da Equipe do Projeto]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="23" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="19" uuid="e5edede7-b8fd-466c-b6cd-7becfe95852d">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b7f426de-465d-45b8-ae14-b8ddee4107e9"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{matricula}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="0" width="140" height="19" uuid="f02a7c43-ca45-49ed-b7dc-1b7899de3073">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="50c3490b-005b-4f74-bc6d-b1eb1a454fd6"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="240" y="0" width="100" height="19" uuid="70f879fd-f429-41f5-978a-7e309dcaa501">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3eeb6841-c2ee-4253-9dc5-87bbe3c5d584"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{funcao}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="8" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<line>
+				<reportElement x="1" y="4" width="352" height="1" uuid="165163ec-5819-4623-a866-dabe31575fc0">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="1.0" lineStyle="Dashed" lineColor="#0732F2"/>
+				</graphicElement>
+			</line>
+		</band>
+	</summary>
+</jasperReport>
